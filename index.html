@@ -17,23 +17,14 @@
   html,body{margin:0}
   body{
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Inter",Arial,sans-serif;
-    background:#070a12;
-    color:var(--text);
-    min-height:100vh;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+    background:#070a12;color:var(--text);min-height:100vh;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
   [hidden]{display:none!important}
 
   /* ---------- ФОН ---------- */
-  .bg{
-    position:fixed;inset:0;z-index:-1;overflow:hidden;
-    background:radial-gradient(ellipse at top,#101830,#070a12 65%);
-  }
-  .blob{
-    position:absolute;border-radius:50%;
-    filter:blur(90px);opacity:.5;will-change:transform;
-  }
+  .bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(ellipse at top,#101830,#070a12 65%)}
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;will-change:transform}
   .blob-1{width:520px;height:520px;background:#2563eb;top:-160px;left:-110px;animation:float1 22s ease-in-out infinite}
   .blob-2{width:620px;height:620px;background:#7c3aed;top:18%;right:-240px;animation:float2 28s ease-in-out infinite}
   .blob-3{width:440px;height:440px;background:#ec4899;bottom:-140px;left:28%;opacity:.35;animation:float3 24s ease-in-out infinite}
@@ -57,6 +48,7 @@
   .screen.active{display:block;animation:screenIn .55s cubic-bezier(.22,1,.36,1)}
   @keyframes screenIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes tabIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
   #welcome.active,#auth.active{display:flex;align-items:center;justify-content:center}
 
   /* ---------- БРЕНД ---------- */
@@ -66,31 +58,18 @@
     display:grid;place-items:center;font-weight:800;color:#fff;
     box-shadow:0 4px 20px rgba(59,130,246,.4);flex-shrink:0;
   }
-  .brand-mark.big{
-    width:88px;height:88px;border-radius:26px;
-    font-size:42px;margin:0 auto 22px;
-    animation:pulseGlow 4s ease-in-out infinite;
-  }
-  @keyframes pulseGlow{
-    0%,100%{box-shadow:0 4px 30px rgba(59,130,246,.4)}
-    50%{box-shadow:0 4px 55px rgba(139,92,246,.65)}
-  }
+  .brand-mark.big{width:88px;height:88px;border-radius:26px;font-size:42px;margin:0 auto 22px;animation:pulseGlow 4s ease-in-out infinite}
+  @keyframes pulseGlow{0%,100%{box-shadow:0 4px 30px rgba(59,130,246,.4)}50%{box-shadow:0 4px 55px rgba(139,92,246,.65)}}
 
   /* ---------- WELCOME ---------- */
   .welcome-wrap{max-width:760px;text-align:center;padding:20px;animation:fadeUp .8s ease}
-  .welcome-title{
-    font-size:58px;font-weight:800;letter-spacing:-2.5px;margin:0 0 8px;
-    background:linear-gradient(135deg,#fff,#a5b4fc);
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
+  .welcome-title{font-size:58px;font-weight:800;letter-spacing:-2.5px;margin:0 0 8px;background:linear-gradient(135deg,#fff,#a5b4fc);-webkit-background-clip:text;background-clip:text;color:transparent}
   .welcome-tag{font-size:18px;color:#a5b4fc;margin:0 0 18px}
   .welcome-story{font-size:15px;color:var(--muted);line-height:1.65;max-width:540px;margin:0 auto 30px}
   .features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:32px}
   .feature{padding:20px 12px;text-align:center;animation:fadeUp .8s ease backwards}
-  .feature:nth-child(1){animation-delay:.1s}
-  .feature:nth-child(2){animation-delay:.2s}
-  .feature:nth-child(3){animation-delay:.3s}
-  .feature:nth-child(4){animation-delay:.4s}
+  .feature:nth-child(1){animation-delay:.1s}.feature:nth-child(2){animation-delay:.2s}
+  .feature:nth-child(3){animation-delay:.3s}.feature:nth-child(4){animation-delay:.4s}
   .feature-icon{font-size:26px;margin-bottom:10px}
   .feature-title{font-size:13px;font-weight:600;margin-bottom:4px}
   .feature-text{font-size:11px;color:var(--muted);line-height:1.4}
@@ -106,13 +85,9 @@
   .btn-primary:hover{filter:brightness(1.12);box-shadow:0 10px 32px rgba(139,92,246,.45)}
   .btn-primary:active{transform:translateY(1px)}
   .btn-primary.big{width:auto;padding:16px 44px;font-size:16px;border-radius:999px}
-  .btn-ghost{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.1);
-    color:var(--muted);padding:8px 14px;border-radius:10px;
-    font:inherit;font-size:13px;cursor:pointer;transition:all .2s;
-  }
+  .btn-ghost{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--muted);padding:8px 14px;border-radius:10px;font:inherit;font-size:13px;cursor:pointer;transition:all .2s}
   .btn-ghost:hover{background:rgba(244,63,94,.15);color:#fca5a5;border-color:rgba(244,63,94,.3)}
+  .btn-ghost.neutral:hover{background:rgba(255,255,255,.1);color:var(--text);border-color:rgba(255,255,255,.2)}
   .link-btn{background:none;border:none;color:#a5b4fc;font:inherit;font-size:13px;cursor:pointer;padding:8px 0;transition:color .2s}
   .link-btn:hover{color:#fff}
   .welcome-foot{font-size:12px;color:var(--muted);margin-top:20px}
@@ -128,78 +103,57 @@
   .field .hint{font-size:11px;color:#64748b;margin-top:2px}
   input,select{
     width:100%;font:inherit;font-size:15px;color:var(--text);
-    background:rgba(0,0,0,.25);
-    border:1px solid rgba(255,255,255,.1);
+    background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);
     padding:12px 14px;border-radius:12px;outline:none;
     transition:border-color .2s,box-shadow .2s,background .2s;
   }
-  input:focus,select:focus{
-    border-color:rgba(99,102,241,.6);
-    box-shadow:0 0 0 4px rgba(99,102,241,.15);
-    background:rgba(0,0,0,.35);
-  }
+  input:focus,select:focus{border-color:rgba(99,102,241,.6);box-shadow:0 0 0 4px rgba(99,102,241,.15);background:rgba(0,0,0,.35)}
   input::placeholder{color:rgba(148,163,184,.5)}
   input[type="date"]{color-scheme:dark}
-
   .auth-error{color:#fca5a5;font-size:13px;min-height:18px;margin-bottom:8px}
   .auth-links{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:14px}
 
   /* ---------- AUTOCOMPLETE ---------- */
   .autocomplete-wrap{position:relative}
-  .autocomplete-list{
-    position:absolute;top:100%;left:0;right:0;z-index:50;
-    background:#151a2e;border:1px solid rgba(255,255,255,.12);
-    border-radius:12px;margin-top:4px;max-height:200px;overflow-y:auto;
-    box-shadow:0 12px 30px rgba(0,0,0,.5);display:none;
-  }
+  .autocomplete-list{position:absolute;top:100%;left:0;right:0;z-index:50;background:#151a2e;border:1px solid rgba(255,255,255,.12);border-radius:12px;margin-top:4px;max-height:200px;overflow-y:auto;box-shadow:0 12px 30px rgba(0,0,0,.5);display:none}
   .autocomplete-list.open{display:block;animation:tabIn .2s ease}
-  .autocomplete-item{
-    padding:10px 14px;font-size:14px;cursor:pointer;transition:background .15s;
-    display:flex;align-items:center;gap:8px;
-  }
+  .autocomplete-item{padding:10px 14px;font-size:14px;cursor:pointer;transition:background .15s;display:flex;align-items:center;gap:8px}
   .autocomplete-item:hover,.autocomplete-item.active{background:rgba(99,102,241,.2)}
-  .autocomplete-item .logo-mini{width:20px;height:20px;object-fit:contain}
 
   /* ---------- APP ---------- */
   .app-shell{max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:14px;animation:fadeUp .5s ease}
   .topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px}
-  .topbar-left{display:flex;align-items:center;gap:12px}
-  .topbar-title{font-weight:700;font-size:16px;letter-spacing:-.3px}
+  .topbar-left{display:flex;align-items:center;gap:12px;cursor:pointer;padding:6px 10px 6px 6px;border-radius:14px;transition:background .2s}
+  .topbar-left:hover{background:rgba(255,255,255,.06)}
+  .topbar-title{font-weight:700;font-size:16px;letter-spacing:-.3px;display:flex;align-items:center;gap:6px}
+  .topbar-title::after{content:'▾';font-size:11px;color:var(--muted);opacity:.7}
   .topbar-user{font-size:12px;color:var(--muted)}
 
-  /* ---------- ВЫБОР МАШИНЫ ---------- */
-  .car-bar{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
-  .car-bar::-webkit-scrollbar{display:none}
-  .car-empty{font-size:13px;color:var(--muted);padding:8px 4px}
-  .car-pill{
-    flex-shrink:0;display:flex;align-items:center;gap:8px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    color:var(--muted);padding:8px 14px;border-radius:999px;
-    font:inherit;font-size:13px;cursor:pointer;transition:all .2s;
+  /* ---------- ВКЛАДКИ МАШИН ---------- */
+  .car-tabs{display:flex;gap:4px;padding:6px;overflow-x:auto;scrollbar-width:none}
+  .car-tabs::-webkit-scrollbar{display:none}
+  .car-empty{font-size:13px;color:var(--muted);padding:10px 14px}
+  .car-tab{
+    flex-shrink:0;display:flex;align-items:center;gap:9px;
+    background:transparent;border:1px solid transparent;color:var(--muted);
+    padding:9px 16px;border-radius:14px;font:inherit;font-size:13px;
+    cursor:pointer;transition:all .22s;white-space:nowrap;
   }
-  .car-pill:hover{color:var(--text);border-color:rgba(255,255,255,.2)}
-  .car-pill.active{
-    background:linear-gradient(135deg,rgba(59,130,246,.32),rgba(139,92,246,.32));
+  .car-tab:hover{color:var(--text);background:rgba(255,255,255,.05)}
+  .car-tab.active{
+    background:linear-gradient(135deg,rgba(59,130,246,.3),rgba(139,92,246,.3));
     border-color:rgba(139,92,246,.5);color:#fff;
-    box-shadow:0 4px 20px rgba(59,130,246,.25);
+    box-shadow:0 4px 18px rgba(59,130,246,.22);
   }
-  .car-pill-logo{width:22px;height:22px;object-fit:contain;flex-shrink:0}
-  .car-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .car-tab-logo{width:22px;height:22px;object-fit:contain;flex-shrink:0}
+  .car-tab-plate{font-size:11px;opacity:.75;font-variant-numeric:tabular-nums}
 
   /* ---------- ТАБЫ ---------- */
   .tabs{display:flex;padding:6px;gap:4px;overflow-x:auto;scrollbar-width:none}
   .tabs::-webkit-scrollbar{display:none}
-  .tab-btn{
-    flex:1;min-width:100px;background:transparent;border:none;color:var(--muted);
-    padding:11px 16px;border-radius:14px;font:inherit;font-size:14px;
-    font-weight:500;cursor:pointer;transition:color .2s,background .2s;white-space:nowrap;
-  }
+  .tab-btn{flex:1;min-width:88px;background:transparent;border:none;color:var(--muted);padding:11px 16px;border-radius:14px;font:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s,background .2s;white-space:nowrap}
   .tab-btn:hover:not(.active){color:var(--text)}
-  .tab-btn.active{
-    background:rgba(255,255,255,.1);color:var(--text);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.1);
-  }
+  .tab-btn.active{background:rgba(255,255,255,.1);color:var(--text);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
 
   /* ---------- СТАТИСТИКА ---------- */
   .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -210,14 +164,9 @@
   /* ---------- ТАБ-КОНТЕНТ ---------- */
   .tab-content{display:none;flex-direction:column;gap:14px}
   .tab-content.active{display:flex;animation:tabIn .4s ease}
-  @keyframes tabIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
   .card{overflow:hidden}
-  .card-head{
-    padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.06);
-    font-weight:600;font-size:14px;display:flex;justify-content:space-between;
-    align-items:baseline;gap:8px;flex-wrap:wrap;
-  }
+  .card-head{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.06);font-weight:600;font-size:14px;display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
   .card-sub{font-size:12px;color:var(--muted);font-weight:400}
 
   .entry-form{padding:18px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -226,11 +175,7 @@
   .entry-form .btn-primary{grid-column:1/-1}
 
   .list{list-style:none;margin:0;padding:0}
-  .record{
-    display:grid;grid-template-columns:92px 1fr auto auto;grid-template-areas:"date body cost actions";
-    gap:12px;align-items:center;padding:14px 20px;
-    border-bottom:1px solid rgba(255,255,255,.05);transition:background .2s;
-  }
+  .record{display:grid;grid-template-columns:92px 1fr auto auto;grid-template-areas:"date body cost actions";gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.05);transition:background .2s}
   .record:hover{background:rgba(255,255,255,.03)}
   .record:last-child{border-bottom:none}
   .r-date{grid-area:date;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -239,17 +184,10 @@
   .r-note{font-size:13px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
   .r-cost{grid-area:cost;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
   .r-actions{grid-area:actions;display:flex;gap:4px}
-  .r-del,.r-edit{
-    width:30px;height:30px;background:transparent;color:#64748b;font-size:14px;
-    display:grid;place-items:center;padding:0;border:none;border-radius:8px;cursor:pointer;transition:all .2s;
-  }
+  .r-del,.r-edit{width:30px;height:30px;background:transparent;color:#64748b;font-size:14px;display:grid;place-items:center;padding:0;border:none;border-radius:8px;cursor:pointer;transition:all .2s}
   .r-del:hover{background:rgba(244,63,94,.15);color:#fca5a5}
   .r-edit:hover{background:rgba(59,130,246,.2);color:#93c5fd}
-  .qty-badge{
-    display:inline-block;font-size:11px;font-weight:600;
-    background:rgba(139,92,246,.25);color:#c4b5fd;
-    padding:2px 7px;border-radius:6px;margin-left:6px;vertical-align:middle;
-  }
+  .qty-badge{display:inline-block;font-size:11px;font-weight:600;background:rgba(139,92,246,.25);color:#c4b5fd;padding:2px 7px;border-radius:6px;margin-left:6px;vertical-align:middle}
   .empty{padding:32px 20px;text-align:center;color:var(--muted);font-size:14px}
   .no-car{padding:26px 20px;text-align:center;color:var(--muted);font-size:14px}
 
@@ -258,36 +196,19 @@
   .car-card:last-child{margin-bottom:0}
   .car-card.active{border-color:rgba(139,92,246,.5)}
   .car-card-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
-  .car-avatar{
-    width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
-    flex-shrink:0;overflow:hidden;
-    background:rgba(255,255,255,.06);
-    box-shadow:0 4px 16px rgba(0,0,0,.3);
-  }
+  .car-avatar{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;flex-shrink:0;overflow:hidden;background:rgba(255,255,255,.06);box-shadow:0 4px 16px rgba(0,0,0,.3)}
   .car-avatar img{width:36px;height:36px;object-fit:contain}
   .car-avatar .letter{font-weight:800;font-size:20px;color:#fff}
   .car-card-info{flex:1;min-width:0}
   .car-card-title{font-weight:600;font-size:16px;letter-spacing:-.2px}
   .car-card-sub{font-size:12px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
-  .badge-active{
-    font-size:11px;font-weight:600;color:#c4b5fd;
-    background:rgba(139,92,246,.22);padding:4px 10px;border-radius:999px;
-    border:1px solid rgba(139,92,246,.35);flex-shrink:0;
-  }
-  .car-card-stats{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
-    padding:12px 0;border-top:1px solid rgba(255,255,255,.06);
-    border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:12px;
-  }
+  .badge-active{font-size:11px;font-weight:600;color:#c4b5fd;background:rgba(139,92,246,.22);padding:4px 10px;border-radius:999px;border:1px solid rgba(139,92,246,.35);flex-shrink:0}
+  .car-card-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:12px}
   .car-card-stats div{display:flex;flex-direction:column;gap:2px}
   .car-card-stats span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
   .car-card-stats b{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
   .car-card-actions{display:flex;gap:8px;flex-wrap:wrap}
-  .btn-mini{
-    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-    color:var(--text);font:inherit;font-size:13px;font-weight:500;
-    padding:8px 16px;border-radius:10px;cursor:pointer;transition:all .2s;
-  }
+  .btn-mini{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--text);font:inherit;font-size:13px;font-weight:500;padding:8px 16px;border-radius:10px;cursor:pointer;transition:all .2s}
   .btn-mini:hover{background:rgba(255,255,255,.12)}
   .btn-mini.danger{color:#fca5a5}
   .btn-mini.danger:hover{background:rgba(244,63,94,.15);border-color:rgba(244,63,94,.3)}
@@ -295,20 +216,34 @@
   .btn-mini.accent:hover{background:rgba(59,130,246,.3)}
 
   /* ---------- МОДАЛКА ---------- */
-  .modal-overlay{
-    position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6);
-    backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px;
-  }
+  .modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px}
   .modal-overlay.open{display:flex;animation:screenIn .25s ease}
-  .modal{
-    width:100%;max-width:560px;max-height:90vh;overflow-y:auto;
-    padding:26px 24px;animation:fadeUp .3s ease;
-  }
+  .modal{width:100%;max-width:560px;max-height:90vh;overflow-y:auto;padding:26px 24px;animation:fadeUp .3s ease}
   .modal h3{margin:0 0 18px;font-size:20px;letter-spacing:-.4px}
   .modal .entry-form{padding:0}
   .modal-actions{display:flex;gap:10px;margin-top:18px}
   .modal-actions .btn-primary{flex:1}
   .modal-actions .btn-ghost{flex:0 0 auto;padding:14px 20px}
+
+  /* ---------- ПРОФИЛЬ ---------- */
+  .profile-head{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .profile-avatar{width:60px;height:60px;border-radius:20px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);display:grid;place-items:center;font-size:24px;font-weight:800;color:#fff;box-shadow:0 6px 20px rgba(59,130,246,.4);flex-shrink:0}
+  .profile-name{font-size:18px;font-weight:700;letter-spacing:-.3px}
+  .profile-meta{font-size:12px;color:var(--muted);margin-top:3px}
+  .profile-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:22px;padding:14px;background:rgba(0,0,0,.2);border-radius:14px}
+  .profile-stat-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+  .profile-stat-value{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+  .profile-section-title{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+  .profile-cars{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+  .profile-car{display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:12px}
+  .profile-car-logo{width:28px;height:28px;object-fit:contain;flex-shrink:0}
+  .profile-car-info{flex:1;min-width:0}
+  .profile-car-name{font-size:14px;font-weight:600}
+  .profile-car-sub{font-size:11px;color:var(--muted);margin-top:2px}
+  .profile-car-stats{text-align:right;flex-shrink:0}
+  .profile-car-stats b{font-size:14px}
+  .profile-car-stats-sub{font-size:11px;color:var(--muted)}
+  .profile-empty{padding:14px;text-align:center;color:var(--muted);font-size:13px}
 
   /* ---------- ПОИСК ЗАПЧАСТЕЙ ---------- */
   .search-panel{padding:18px 20px}
@@ -316,24 +251,53 @@
   .search-row .field{margin-bottom:0}
   .search-results{padding:0 20px 18px}
   .search-empty{font-size:13px;color:var(--muted);padding:10px 0}
-  .shop-card{
-    padding:14px 16px;margin-bottom:10px;border-radius:14px;
-    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
-    transition:border-color .2s;
-  }
+  .shop-card{padding:14px 16px;margin-bottom:10px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);transition:border-color .2s}
   .shop-card:hover{border-color:rgba(139,92,246,.35)}
   .shop-name{font-weight:600;font-size:14px;margin-bottom:4px}
   .shop-meta{font-size:12px;color:var(--muted);line-height:1.6}
   .shop-meta a{color:#93c5fd;text-decoration:none}
   .shop-meta a:hover{text-decoration:underline}
   .search-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-  .search-link-btn{
-    display:inline-flex;align-items:center;gap:6px;
-    background:rgba(59,130,246,.18);border:1px solid rgba(59,130,246,.35);
-    color:#93c5fd;padding:9px 14px;border-radius:10px;font:inherit;font-size:13px;
-    text-decoration:none;transition:all .2s;
-  }
+  .search-link-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,.18);border:1px solid rgba(59,130,246,.35);color:#93c5fd;padding:9px 14px;border-radius:10px;font:inherit;font-size:13px;text-decoration:none;transition:all .2s}
   .search-link-btn:hover{background:rgba(59,130,246,.3);color:#fff}
+
+  /* ---------- ОТЧЁТ ---------- */
+  .report-toolbar{display:flex;gap:10px;flex-wrap:wrap;padding:18px 20px;align-items:center}
+  .report-hint{font-size:12px;color:var(--muted);margin-left:auto}
+  .report{
+    background:#fff;color:#1a1a1a;border-radius:var(--radius);padding:40px;
+    font-size:13px;line-height:1.55;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+  }
+  .report-header{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:24px;border-bottom:3px solid #1a1a1a;margin-bottom:24px;gap:20px;flex-wrap:wrap}
+  .report-brand{display:flex;align-items:center;gap:14px}
+  .report-logo{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;display:grid;place-items:center;font-size:28px;font-weight:800;flex-shrink:0}
+  .report h1{font-size:22px;margin:0 0 2px;letter-spacing:-.5px;color:#1a1a1a}
+  .report-sub{font-size:12px;color:#666}
+  .report-meta{font-size:12px;color:#444;line-height:1.7;text-align:right}
+  .report-meta strong{color:#1a1a1a}
+  .report-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:32px}
+  .report-summary-card{background:#f5f6fa;border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px}
+  .report-summary-label{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+  .report-summary-value{font-size:18px;font-weight:700;color:#1a1a1a}
+  .report h2{font-size:15px;text-transform:uppercase;letter-spacing:1px;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #1a1a1a;color:#1a1a1a}
+  .report-car{margin-bottom:28px;padding-bottom:24px;border-bottom:1px dashed #d1d5db}
+  .report-car:last-child{border-bottom:none}
+  .report-car-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .report-car-logo{width:40px;height:40px;object-fit:contain;flex-shrink:0}
+  .report-car-title{flex:1;min-width:0}
+  .report-car-title h3{font-size:17px;margin:0 0 3px;text-transform:none;letter-spacing:0;color:#1a1a1a}
+  .report-car-details{font-size:12px;color:#666}
+  .report-car-total{font-size:20px;font-weight:700;color:#1a1a1a;white-space:nowrap}
+  .report h4{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:#555;margin:16px 0 8px}
+  .report-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:8px}
+  .report-table th{text-align:left;padding:8px 10px;background:#f5f6fa;border-bottom:2px solid #1a1a1a;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#444}
+  .report-table td{padding:8px 10px;border-bottom:1px solid #e5e7eb;color:#1a1a1a}
+  .report-table .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .report-table tfoot td{font-weight:700;background:#f9fafb;border-top:2px solid #1a1a1a;border-bottom:none}
+  .report-empty{padding:20px;text-align:center;color:#888;background:#f5f6fa;border-radius:8px}
+  .report-empty-small{font-size:12px;color:#888;padding:6px 0 14px;font-style:italic}
+  .report-foot{margin-top:32px;padding-top:16px;border-top:1px solid #e5e7eb;font-size:11px;color:#888;text-align:center}
 
   /* ---------- МОБИЛЬНАЯ ---------- */
   @media (max-width:640px){
@@ -344,15 +308,35 @@
     .stat-value{font-size:16px}
     .stat-label{font-size:10px}
     .entry-form{grid-template-columns:1fr}
-    .record{
-      grid-template-columns:1fr auto;
-      grid-template-areas:"date actions" "body cost";
-      row-gap:6px;
-    }
+    .record{grid-template-columns:1fr auto;grid-template-areas:"date actions" "body cost";row-gap:6px}
     .r-cost{align-self:end;justify-self:end}
     .car-card-stats{grid-template-columns:repeat(2,1fr)}
-    .tab-btn{padding:10px 8px;font-size:13px;min-width:80px}
+    .tab-btn{padding:10px 8px;font-size:13px;min-width:78px}
     .search-row{grid-template-columns:1fr}
+    .profile-stats{grid-template-columns:repeat(2,1fr)}
+    .report{padding:22px}
+    .report-summary{grid-template-columns:repeat(2,1fr)}
+    .report-header{flex-direction:column}
+    .report-meta{text-align:left}
+  }
+
+  /* ---------- ПЕЧАТЬ ---------- */
+  @media print {
+    @page { size: A4; margin: 12mm; }
+    html, body { background: #fff !important; color: #000 !important; }
+    .bg, .blob, .topbar, .tabs, .car-tabs, .car-bar, .stats-row,
+    .modal-overlay, .no-print, .report-toolbar { display: none !important; }
+    .screen { display: none !important; padding: 0; min-height: 0; }
+    #app { display: block !important; padding: 0; min-height: 0; }
+    .app-shell { gap: 0; max-width: 100%; display: block; animation: none; }
+    .tab-content { display: none !important; }
+    #tab-reports { display: block !important; animation: none; }
+    .report {
+      padding: 0 !important; border-radius: 0 !important; box-shadow: none !important;
+      background: #fff !important; color: #000 !important;
+    }
+    .report-car { page-break-inside: avoid; }
+    .report-table tr { page-break-inside: avoid; }
   }
 </style>
 </head>
@@ -379,7 +363,7 @@
       <div class="feature glass"><div class="feature-icon">🛠️</div><div class="feature-title">Учёт ремонтов</div><div class="feature-text">Что сделали и сколько заплатили</div></div>
       <div class="feature glass"><div class="feature-icon">🔩</div><div class="feature-title">Запчасти</div><div class="feature-text">Покупки, магазины и цены</div></div>
       <div class="feature glass"><div class="feature-icon">🚗</div><div class="feature-title">Несколько авто</div><div class="feature-text">Отдельная статистика для каждой</div></div>
-      <div class="feature glass"><div class="feature-icon">🔍</div><div class="feature-title">Поиск по VIN</div><div class="feature-text">Ссылки на магазины и контакты</div></div>
+      <div class="feature glass"><div class="feature-icon">📄</div><div class="feature-title">Отчёт</div><div class="feature-text">Красивый документ, печать и PDF</div></div>
     </div>
     <button class="btn-primary big" id="startBtn">Создать гараж</button>
     <p class="welcome-foot">Данные хранятся только в вашем браузере</p>
@@ -419,7 +403,7 @@
   <div class="app-shell">
 
     <header class="topbar glass">
-      <div class="topbar-left">
+      <div class="topbar-left" id="profileBtn" title="Открыть профиль">
         <div class="brand-mark">Г</div>
         <div>
           <div class="topbar-title">Гараж</div>
@@ -429,14 +413,15 @@
       <button class="btn-ghost" id="logoutBtn">Выйти</button>
     </header>
 
-    <div class="car-bar" id="carBar"></div>
-
     <nav class="tabs glass">
       <button class="tab-btn active" data-tab="repairs">Ремонт</button>
       <button class="tab-btn" data-tab="parts">Запчасти</button>
       <button class="tab-btn" data-tab="cars">Автомобили</button>
-      <button class="tab-btn" data-tab="search">Поиск запчастей</button>
+      <button class="tab-btn" data-tab="search">Поиск</button>
+      <button class="tab-btn" data-tab="report">Отчёт</button>
     </nav>
+
+    <div class="car-tabs glass" id="carTabs"></div>
 
     <div class="stats-row" id="statsRow"></div>
 
@@ -586,12 +571,29 @@
       </div>
     </div>
 
+    <!-- ---- ОТЧЁТ ---- -->
+    <div class="tab-content" id="tab-report">
+      <div class="glass card no-print">
+        <div class="card-head">Отчёт по всем автомобилям</div>
+        <div class="report-toolbar">
+          <button class="btn-primary" id="printBtn" style="width:auto;padding:12px 24px">🖨 Распечатать</button>
+          <button class="btn-mini accent" id="pdfBtn" style="padding:12px 24px">📄 Сохранить в PDF</button>
+          <span class="report-hint">PDF — через диалог печати, выберите «Сохранить как PDF»</span>
+        </div>
+      </div>
+      <div id="reportArea"></div>
+    </div>
+
   </div>
 </section>
 
-<!-- ============ МОДАЛКА РЕДАКТИРОВАНИЯ ============ -->
+<!-- ============ МОДАЛКИ ============ -->
 <div class="modal-overlay" id="editModal">
   <div class="modal glass" id="editModalContent"></div>
+</div>
+
+<div class="modal-overlay" id="profileModal">
+  <div class="modal glass" id="profileModalContent"></div>
 </div>
 
 <script>
@@ -629,8 +631,10 @@ const todayISO = () => {
 
 const genId = p => p + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 
+const formatDateLong = d => new Date(d).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
+
 /* ============================================================
-   БАЗА ДЛЯ АВТОДОПОЛНЕНИЯ (популярные марки и модели)
+   БАЗА АВТО
    ============================================================ */
 const CAR_DB = {
   "Lada": ["Vesta", "Granta", "Niva", "XRAY", "Largus", "Priora", "Kalina"],
@@ -660,41 +664,27 @@ const CAR_DB = {
 };
 
 /* ============================================================
-   ЛОГОТИПЫ БРЕНДОВ (CDN jsDelivr)
+   ЛОГОТИПЫ
    ============================================================ */
 function brandLogoUrl(brand) {
   if (!brand) return '';
-  const slug = brand.toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '');
+  const slug = brand.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
   return `https://cdn.jsdelivr.net/gh/vehiclespecs/brand-logos@v1.0.0/${slug}-logo.svg`;
 }
 
 /* ============================================================
-   ВАЛИДАЦИЯ ГОСНОМЕРА РФ
+   ВАЛИДАЦИЯ
    ============================================================ */
 const PLATE_LETTERS = 'АВЕКМНОРСТУХ';
 const PLATE_REGEX = /^[АВЕКМНОРСТУХ]\d{3}[АВЕКМНОРСТУХ]{2}\d{2,3}$/;
 
 function normalizePlate(input) {
   let v = input.toUpperCase().replace(/\s+/g, '');
-  // латиница -> кириллица
   const latToCyr = {A:'А',B:'В',E:'Е',K:'К',M:'М',H:'Н',O:'О',P:'Р',C:'С',T:'Т',Y:'У',X:'Х'};
-  v = v.split('').map(ch => latToCyr[ch] || ch).join('');
-  return v;
+  return v.split('').map(ch => latToCyr[ch] || ch).join('');
 }
-
-function validatePlate(plate) {
-  return PLATE_REGEX.test(normalizePlate(plate));
-}
-
-/* ============================================================
-   VIN
-   ============================================================ */
-function validateVin(vin) {
-  if (!vin) return true; // опционально
-  return /^[A-HJ-NPR-Z0-9]{17}$/i.test(vin.trim());
-}
+const validatePlate = p => PLATE_REGEX.test(normalizePlate(p));
+const validateVin = v => !v || /^[A-HJ-NPR-Z0-9]{17}$/i.test(v.trim());
 
 /* ============================================================
    СОСТОЯНИЕ
@@ -703,25 +693,13 @@ let users = {};
 let currentLogin = null;
 let currentCarId = null;
 let authMode = 'login';
-let editingCarId = null;
 
 /* ============================================================
-   ЭКРАНЫ
+   ЭКРАНЫ / ПОЛЬЗОВАТЕЛИ
    ============================================================ */
-function showScreen(id) {
-  $$('.screen').forEach(s => s.classList.toggle('active', s.id === id));
-}
-
-/* ============================================================
-   ПОЛЬЗОВАТЕЛИ
-   ============================================================ */
-function loadUsers() {
-  try { users = JSON.parse(localStorage.getItem(LS_USERS)) || {}; }
-  catch (e) { users = {}; }
-}
-function saveUsers() {
-  localStorage.setItem(LS_USERS, JSON.stringify(users));
-}
+function showScreen(id) { $$('.screen').forEach(s => s.classList.toggle('active', s.id === id)); }
+function loadUsers() { try { users = JSON.parse(localStorage.getItem(LS_USERS)) || {}; } catch (e) { users = {}; } }
+function saveUsers() { localStorage.setItem(LS_USERS, JSON.stringify(users)); }
 const currentUser = () => currentLogin ? users[currentLogin] : null;
 
 /* ============================================================
@@ -730,14 +708,10 @@ const currentUser = () => currentLogin ? users[currentLogin] : null;
 function setAuthMode(mode) {
   authMode = mode;
   $('#authTitle').textContent = mode === 'login' ? 'Вход' : 'Регистрация';
-  $('#authSub').textContent = mode === 'login'
-    ? 'Войдите, чтобы открыть свой гараж'
-    : 'Придумайте логин и пароль — это займёт секунду';
+  $('#authSub').textContent = mode === 'login' ? 'Войдите, чтобы открыть свой гараж' : 'Придумайте логин и пароль — это займёт секунду';
   $('#authSubmit').textContent = mode === 'login' ? 'Войти' : 'Создать аккаунт';
   $('#authPass2Field').hidden = mode === 'login';
-  $('#authToggle').textContent = mode === 'login'
-    ? 'Нет аккаунта? Зарегистрируйтесь'
-    : 'Уже есть аккаунт? Войти';
+  $('#authToggle').textContent = mode === 'login' ? 'Нет аккаунта? Зарегистрируйтесь' : 'Уже есть аккаунт? Войти';
   $('#authError').textContent = '';
   $('#authPass').value = '';
   $('#authPass2').value = '';
@@ -772,7 +746,6 @@ $('#authForm').addEventListener('submit', e => {
     const pass2 = $('#authPass2').value;
     if (pass !== pass2) { err.textContent = 'Пароли не совпадают'; return; }
     if (users[login])   { err.textContent = 'Такой логин уже занят'; return; }
-
     users[login] = { password: pass, createdAt: Date.now(), cars: [], repairs: [], parts: [] };
     saveUsers();
     startSession(login);
@@ -840,8 +813,7 @@ function carStats(carId) {
    ============================================================ */
 function setupAutocomplete(inputEl, listEl, getSuggestions, onSelect) {
   let activeIdx = -1;
-
-  function close() { listEl.classList.remove('open'); activeIdx = -1; }
+  const close = () => { listEl.classList.remove('open'); activeIdx = -1; };
 
   function render(items) {
     if (!items.length) { close(); return; }
@@ -850,7 +822,6 @@ function setupAutocomplete(inputEl, listEl, getSuggestions, onSelect) {
       `<div class="autocomplete-item" data-idx="${i}">${esc(item)}</div>`
     ).join('');
     listEl.classList.add('open');
-
     listEl.querySelectorAll('.autocomplete-item').forEach(el => {
       el.addEventListener('mousedown', e => {
         e.preventDefault();
@@ -863,15 +834,13 @@ function setupAutocomplete(inputEl, listEl, getSuggestions, onSelect) {
   inputEl.addEventListener('input', () => {
     const val = inputEl.value.trim().toLowerCase();
     if (!val) { close(); return; }
-    const items = getSuggestions(val).slice(0, 8);
-    render(items);
+    render(getSuggestions(val).slice(0, 8));
   });
 
   inputEl.addEventListener('keydown', e => {
     if (!listEl.classList.contains('open')) return;
     const items = listEl.querySelectorAll('.autocomplete-item');
     if (!items.length) return;
-
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       activeIdx = Math.min(activeIdx + 1, items.length - 1);
@@ -892,45 +861,37 @@ function setupAutocomplete(inputEl, listEl, getSuggestions, onSelect) {
   inputEl.addEventListener('blur', () => setTimeout(close, 150));
 }
 
-/* марка */
 setupAutocomplete(
-  $('#carBrand'),
-  $('#brandSuggest'),
+  $('#carBrand'), $('#brandSuggest'),
   val => Object.keys(CAR_DB).filter(b => b.toLowerCase().includes(val)),
-  val => {
-    $('#carBrand').value = val;
-    $('#carModel').value = '';
-  }
+  val => { $('#carBrand').value = val; $('#carModel').value = ''; }
 );
-
-/* модель */
 setupAutocomplete(
-  $('#carModel'),
-  $('#modelSuggest'),
+  $('#carModel'), $('#modelSuggest'),
   val => {
     const brand = $('#carBrand').value.trim();
-    const models = CAR_DB[brand] || Object.values(CAR_DB).flat();
-    return models.filter(m => m.toLowerCase().includes(val));
+    return (CAR_DB[brand] || Object.values(CAR_DB).flat()).filter(m => m.toLowerCase().includes(val));
   },
   val => { $('#carModel').value = val; }
 );
 
 /* ============================================================
-   РЕНДЕР: ПАНЕЛЬ МАШИН
+   РЕНДЕР: ВКЛАДКИ МАШИН
    ============================================================ */
-function renderCarBar() {
+function renderCarTabs() {
   const u = currentUser();
-  const bar = $('#carBar');
+  const wrap = $('#carTabs');
 
   if (!u.cars.length) {
-    bar.innerHTML = '<div class="car-empty">Нет автомобилей — добавьте первый во вкладке «Автомобили»</div>';
+    wrap.innerHTML = '<div class="car-empty">Нет автомобилей — добавьте первый во вкладке «Автомобили»</div>';
     return;
   }
 
-  bar.innerHTML = u.cars.map(car => `
-    <button class="car-pill ${car.id === currentCarId ? 'active' : ''}" data-car="${esc(car.id)}">
-      <img class="car-pill-logo" src="${brandLogoUrl(car.brand)}" alt="" onerror="this.style.display='none'">
+  wrap.innerHTML = u.cars.map(car => `
+    <button class="car-tab ${car.id === currentCarId ? 'active' : ''}" data-car="${esc(car.id)}">
+      <img class="car-tab-logo" src="${brandLogoUrl(car.brand)}" alt="" onerror="this.style.display='none'">
       <span>${esc(carLabel(car))}</span>
+      ${car.plate ? `<span class="car-tab-plate">${esc(car.plate)}</span>` : ''}
     </button>
   `).join('');
 }
@@ -941,12 +902,10 @@ function renderCarBar() {
 function renderStats() {
   const row = $('#statsRow');
   const car = selectedCar();
-
   if (!car) { row.innerHTML = ''; row.style.display = 'none'; return; }
 
   row.style.display = 'grid';
   const s = carStats(car.id);
-
   row.innerHTML = `
     <div class="stat-card glass"><div class="stat-label">Потрачено</div><div class="stat-value">${fmtMoney(s.total)}</div></div>
     <div class="stat-card glass"><div class="stat-label">Ремонтов</div><div class="stat-value">${s.repairs.length}</div></div>
@@ -961,11 +920,9 @@ function renderRepairs() {
   const car = selectedCar();
   const list  = $('#repairList');
   const empty = $('#repairEmpty');
-
   if (!car) { list.innerHTML = ''; empty.hidden = true; return; }
 
-  const items = currentUser().repairs
-    .filter(r => r.carId === car.id)
+  const items = currentUser().repairs.filter(r => r.carId === car.id)
     .sort((a, b) => (b.date || '').localeCompare(a.date || '') || b.id.localeCompare(a.id));
 
   if (!items.length) {
@@ -999,11 +956,9 @@ function renderParts() {
   const car = selectedCar();
   const list  = $('#partList');
   const empty = $('#partEmpty');
-
   if (!car) { list.innerHTML = ''; empty.hidden = true; return; }
 
-  const items = currentUser().parts
-    .filter(p => p.carId === car.id)
+  const items = currentUser().parts.filter(p => p.carId === car.id)
     .sort((a, b) => (b.date || '').localeCompare(a.date || '') || b.id.localeCompare(a.id));
 
   if (!items.length) {
@@ -1035,7 +990,6 @@ function renderParts() {
 function renderCars() {
   const u = currentUser();
   const wrap = $('#carsList');
-
   if (!u.cars.length) {
     wrap.innerHTML = '<div class="empty">Пока нет автомобилей. Добавьте первый в форме выше.</div>';
     return;
@@ -1081,16 +1035,14 @@ function renderCars() {
 }
 
 /* ============================================================
-   ФОРМЫ: доступность
+   ФОРМЫ
    ============================================================ */
 function updateFormsState() {
   const car = selectedCar();
-
   $('#repairForm').hidden  = !car;
   $('#repairNoCar').hidden = !!car;
   $('#partForm').hidden    = !car;
   $('#partNoCar').hidden   = !!car;
-
   $('#repairForCar').textContent = car ? 'для ' + carLabel(car) : '';
   $('#partForCar').textContent   = car ? 'для ' + carLabel(car) : '';
 }
@@ -1099,7 +1051,7 @@ function updateFormsState() {
    ОБЩИЙ РЕНДЕР
    ============================================================ */
 function renderAll() {
-  renderCarBar();
+  renderCarTabs();
   renderStats();
   renderRepairs();
   renderParts();
@@ -1118,13 +1070,16 @@ function switchTab(name) {
     const car = selectedCar();
     if (car && car.vin) $('#searchVin').value = car.vin;
   }
+  if (name === 'report') {
+    renderReport();
+  }
 }
 $$('.tab-btn').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
 
 /* ============================================================
    ПЕРЕКЛЮЧЕНИЕ МАШИНЫ
    ============================================================ */
-$('#carBar').addEventListener('click', e => {
+$('#carTabs').addEventListener('click', e => {
   const btn = e.target.closest('[data-car]');
   if (!btn) return;
   currentCarId = btn.dataset.car;
@@ -1133,7 +1088,7 @@ $('#carBar').addEventListener('click', e => {
 });
 
 /* ============================================================
-   ДОБАВЛЕНИЕ / РЕДАКТИРОВАНИЕ АВТОМОБИЛЯ
+   АВТОМОБИЛЬ: ДОБАВЛЕНИЕ / РЕДАКТИРОВАНИЕ
    ============================================================ */
 $('#carForm').addEventListener('submit', e => {
   e.preventDefault();
@@ -1149,7 +1104,6 @@ $('#carForm').addEventListener('submit', e => {
 
   const u = currentUser();
   const editId = $('#carEditId').value;
-
   const carData = {
     brand, model,
     year:   $('#carYear').value.trim(),
@@ -1180,12 +1134,8 @@ function resetCarForm() {
   $('#carForm').reset();
   $('#carEditId').value = '';
   $('#carSubmitBtn').textContent = 'Добавить автомобиль';
-  editingCarId = null;
 }
 
-/* ============================================================
-   ДЕЙСТВИЯ С МАШИНОЙ
-   ============================================================ */
 $('#carsList').addEventListener('click', e => {
   const selectBtn = e.target.closest('[data-select-car]');
   if (selectBtn) {
@@ -1200,15 +1150,14 @@ $('#carsList').addEventListener('click', e => {
   if (editBtn) {
     const car = currentUser().cars.find(c => c.id === editBtn.dataset.editCar);
     if (!car) return;
-    editingCarId = car.id;
     $('#carEditId').value = car.id;
-    $('#carBrand').value = car.brand || '';
-    $('#carModel').value = car.model || '';
-    $('#carYear').value  = car.year || '';
-    $('#carPlate').value = car.plate || '';
+    $('#carBrand').value  = car.brand || '';
+    $('#carModel').value  = car.model || '';
+    $('#carYear').value   = car.year || '';
+    $('#carPlate').value  = car.plate || '';
     $('#carEngine').value = car.engine || '';
-    $('#carVin').value   = car.vin || '';
-    $('#carColor').value = car.color || '';
+    $('#carVin').value    = car.vin || '';
+    $('#carColor').value  = car.color || '';
     $('#carSubmitBtn').textContent = 'Сохранить изменения';
     switchTab('cars');
     $('#carBrand').focus();
@@ -1219,51 +1168,40 @@ $('#carsList').addEventListener('click', e => {
   if (delBtn) {
     const id = delBtn.dataset.delCar;
     if (!confirm('Удалить автомобиль и всю его историю?')) return;
-
     const u = currentUser();
     u.cars    = u.cars.filter(c => c.id !== id);
     u.repairs = u.repairs.filter(r => r.carId !== id);
     u.parts   = u.parts.filter(p => p.carId !== id);
-
     if (currentCarId === id) {
       currentCarId = u.cars[0]?.id || null;
       if (currentCarId) localStorage.setItem(LS_CAR(currentLogin), currentCarId);
       else localStorage.removeItem(LS_CAR(currentLogin));
     }
-
     saveUsers();
     renderAll();
   }
 });
 
 /* ============================================================
-   ДОБАВЛЕНИЕ / РЕДАКТИРОВАНИЕ РЕМОНТА
+   РЕМОНТ: ДОБАВЛЕНИЕ
    ============================================================ */
 $('#repairForm').addEventListener('submit', e => {
   e.preventDefault();
   const car = selectedCar();
   if (!car) return;
-
   const work = $('#repWork').value.trim();
   if (!work) return;
 
-  const editId = $('#repairForm').dataset.editId;
-  const data = {
+  currentUser().repairs.push({
+    id: genId('r'),
+    carId: car.id,
     date: $('#repDate').value || todayISO(),
     work,
     cost: parseFloat($('#repCost').value) || 0,
     note: $('#repNote').value.trim()
-  };
-
-  if (editId) {
-    const rec = currentUser().repairs.find(r => r.id === editId);
-    if (rec) Object.assign(rec, data);
-  } else {
-    currentUser().repairs.push({ id: genId('r'), carId: car.id, ...data });
-  }
+  });
   saveUsers();
 
-  delete $('#repairForm').dataset.editId;
   $('#repWork').value = '';
   $('#repCost').value = '';
   $('#repNote').value = '';
@@ -1272,33 +1210,20 @@ $('#repairForm').addEventListener('submit', e => {
 });
 
 /* ============================================================
-   РЕДАКТИРОВАНИЕ РЕМОНТА (модалка)
+   РЕМОНТ: РЕДАКТИРОВАНИЕ / УДАЛЕНИЕ
    ============================================================ */
 $('#repairList').addEventListener('click', e => {
   const editBtn = e.target.closest('[data-edit-repair]');
   if (editBtn) {
     const rec = currentUser().repairs.find(r => r.id === editBtn.dataset.editRepair);
     if (!rec) return;
-
     $('#editModalContent').innerHTML = `
       <h3>Редактировать ремонт</h3>
       <form id="modalRepairForm" class="entry-form">
-        <div class="field">
-          <label>Дата</label>
-          <input type="date" id="mRepDate" value="${esc(rec.date)}" required>
-        </div>
-        <div class="field">
-          <label>Стоимость, ₽</label>
-          <input type="number" id="mRepCost" min="0" step="0.01" value="${esc(rec.cost)}">
-        </div>
-        <div class="field full">
-          <label>Что сделали</label>
-          <input type="text" id="mRepWork" value="${esc(rec.work)}" required>
-        </div>
-        <div class="field full">
-          <label>Заметка</label>
-          <input type="text" id="mRepNote" value="${esc(rec.note || '')}">
-        </div>
+        <div class="field"><label>Дата</label><input type="date" id="mRepDate" value="${esc(rec.date)}" required></div>
+        <div class="field"><label>Стоимость, ₽</label><input type="number" id="mRepCost" min="0" step="0.01" value="${esc(rec.cost)}"></div>
+        <div class="field full"><label>Что сделали</label><input type="text" id="mRepWork" value="${esc(rec.work)}" required></div>
+        <div class="field full"><label>Заметка</label><input type="text" id="mRepNote" value="${esc(rec.note || '')}"></div>
         <div class="modal-actions">
           <button type="submit" class="btn-primary">Сохранить</button>
           <button type="button" class="btn-ghost" data-close-modal>Отмена</button>
@@ -1306,7 +1231,6 @@ $('#repairList').addEventListener('click', e => {
       </form>
     `;
     $('#editModal').classList.add('open');
-
     $('#modalRepairForm').addEventListener('submit', ev => {
       ev.preventDefault();
       rec.date = $('#mRepDate').value;
@@ -1329,13 +1253,12 @@ $('#repairList').addEventListener('click', e => {
 });
 
 /* ============================================================
-   ДОБАВЛЕНИЕ ЗАПЧАСТИ
+   ЗАПЧАСТЬ: ДОБАВЛЕНИЕ / УДАЛЕНИЕ
    ============================================================ */
 $('#partForm').addEventListener('submit', e => {
   e.preventDefault();
   const car = selectedCar();
   if (!car) return;
-
   const name = $('#partName').value.trim();
   if (!name) return;
 
@@ -1370,48 +1293,12 @@ $('#partList').addEventListener('click', e => {
    ПОИСК ЗАПЧАСТЕЙ
    ============================================================ */
 const SHOPS = [
-  {
-    name: 'Autopiter',
-    site: 'https://autopiter.ru',
-    phone: '+7 (925) 357-88-26',
-    hours: 'Пн–Пт 10:00–21:00, Сб–Вс 10:00–20:00',
-    searchUrl: q => `https://autopiter.ru/search?q=${encodeURIComponent(q)}`
-  },
-  {
-    name: 'Emex',
-    site: 'https://www.emex.ru',
-    phone: '+7 (495) 799-55-66',
-    hours: 'Круглосуточно (склад)',
-    searchUrl: q => `https://www.emex.ru/search?q=${encodeURIComponent(q)}`
-  },
-  {
-    name: 'Exist',
-    site: 'https://exist.ru',
-    phone: '+7 (495) 780-00-00',
-    hours: 'Пн–Пт 09:00–21:00, Сб–Вс 10:00–18:00',
-    searchUrl: q => `https://exist.ru/search/?q=${encodeURIComponent(q)}`
-  },
-  {
-    name: 'ZZap',
-    site: 'https://zzap.ru',
-    phone: '+7 (495) 988-88-88',
-    hours: 'Пн–Вс 09:00–21:00',
-    searchUrl: q => `https://zzap.ru/search/?q=${encodeURIComponent(q)}`
-  },
-  {
-    name: 'Avito Запчасти',
-    site: 'https://avito.ru',
-    phone: '—',
-    hours: 'Круглосуточно',
-    searchUrl: q => `https://avito.ru/rossiya/zapchasti_i_aksessuary?q=${encodeURIComponent(q)}`
-  },
-  {
-    name: 'Мир запчастей России',
-    site: 'https://mirzap.ru',
-    phone: '+7 (495) 668-12-59',
-    hours: 'Пн–Вс 09:00–21:00',
-    searchUrl: q => `https://mirzap.ru/search/?q=${encodeURIComponent(q)}`
-  }
+  { name: 'Autopiter', site: 'https://autopiter.ru', phone: '+7 (925) 357-88-26', hours: 'Пн–Пт 10:00–21:00, Сб–Вс 10:00–20:00', searchUrl: q => `https://autopiter.ru/search?q=${encodeURIComponent(q)}` },
+  { name: 'Emex', site: 'https://www.emex.ru', phone: '+7 (495) 799-55-66', hours: 'Круглосуточно (склад)', searchUrl: q => `https://www.emex.ru/search?q=${encodeURIComponent(q)}` },
+  { name: 'Exist', site: 'https://exist.ru', phone: '+7 (495) 780-00-00', hours: 'Пн–Пт 09:00–21:00, Сб–Вс 10:00–18:00', searchUrl: q => `https://exist.ru/search/?q=${encodeURIComponent(q)}` },
+  { name: 'ZZap', site: 'https://zzap.ru', phone: '+7 (495) 988-88-88', hours: 'Пн–Вс 09:00–21:00', searchUrl: q => `https://zzap.ru/search/?q=${encodeURIComponent(q)}` },
+  { name: 'Avito Запчасти', site: 'https://avito.ru', phone: '—', hours: 'Круглосуточно', searchUrl: q => `https://avito.ru/rossiya/zapchasti_i_aksessuary?q=${encodeURIComponent(q)}` },
+  { name: 'Мир запчастей России', site: 'https://mirzap.ru', phone: '+7 (495) 668-12-59', hours: 'Пн–Вс 09:00–21:00', searchUrl: q => `https://mirzap.ru/search/?q=${encodeURIComponent(q)}` }
 ];
 
 $('#searchPartsBtn').addEventListener('click', () => {
@@ -1419,22 +1306,11 @@ $('#searchPartsBtn').addEventListener('click', () => {
   const part = $('#searchPart').value.trim();
   const out  = $('#searchResults');
 
-  if (!vin && !part) {
-    out.innerHTML = '<div class="search-empty">Введите VIN или название запчасти.</div>';
-    return;
-  }
-  if (vin && !validateVin(vin)) {
-    out.innerHTML = '<div class="search-empty" style="color:#fca5a5">VIN должен содержать 17 символов (без I, O, Q).</div>';
-    return;
-  }
+  if (!vin && !part) { out.innerHTML = '<div class="search-empty">Введите VIN или название запчасти.</div>'; return; }
+  if (vin && !validateVin(vin)) { out.innerHTML = '<div class="search-empty" style="color:#fca5a5">VIN должен содержать 17 символов (без I, O, Q).</div>'; return; }
 
   const query = [vin, part].filter(Boolean).join(' ');
-  const links = SHOPS.map(s =>
-    `<a class="search-link-btn" href="${s.searchUrl(query)}" target="_blank" rel="noopener">
-       🔍 ${esc(s.name)}
-     </a>`
-  ).join('');
-
+  const links = SHOPS.map(s => `<a class="search-link-btn" href="${s.searchUrl(query)}" target="_blank" rel="noopener">🔍 ${esc(s.name)}</a>`).join('');
   const shopsHtml = SHOPS.map(s => `
     <div class="shop-card">
       <div class="shop-name">${esc(s.name)}</div>
@@ -1448,19 +1324,205 @@ $('#searchPartsBtn').addEventListener('click', () => {
 
   out.innerHTML = `
     <div class="search-links">${links}</div>
-    <div style="margin-top:18px;font-size:13px;color:var(--muted)">
-      Прямые ссылки на поиск по запросу: <b>${esc(query)}</b>
-    </div>
+    <div style="margin-top:18px;font-size:13px;color:var(--muted)">Прямые ссылки на поиск: <b>${esc(query)}</b></div>
     <div style="margin-top:14px">${shopsHtml}</div>
   `;
 });
 
 /* ============================================================
-   МОДАЛКА: ЗАКРЫТИЕ
+   ПРОФИЛЬ
+   ============================================================ */
+function openProfile() {
+  const u = currentUser();
+  if (!u) return;
+
+  const created = u.createdAt ? formatDateLong(u.createdAt) : '—';
+  let totalAll = 0;
+  u.cars.forEach(c => totalAll += carStats(c.id).total);
+
+  const carsHtml = u.cars.length
+    ? u.cars.map(car => {
+        const s = carStats(car.id);
+        return `
+          <div class="profile-car">
+            <img class="profile-car-logo" src="${brandLogoUrl(car.brand)}" alt="" onerror="this.style.display='none'">
+            <div class="profile-car-info">
+              <div class="profile-car-name">${esc(carLabel(car))}</div>
+              <div class="profile-car-sub">${[car.plate, car.year && car.year + ' г.', car.engine && car.engine + ' л'].filter(Boolean).join(' · ')}</div>
+            </div>
+            <div class="profile-car-stats">
+              <div><b>${fmtMoney(s.total)}</b></div>
+              <div class="profile-car-stats-sub">${s.repairs.length} рем. · ${s.parts.length} зап.</div>
+            </div>
+          </div>
+        `;
+      }).join('')
+    : '<div class="profile-empty">Нет автомобилей</div>';
+
+  $('#profileModalContent').innerHTML = `
+    <h3>Профиль</h3>
+    <div class="profile-head">
+      <div class="profile-avatar">${esc(currentLogin[0].toUpperCase())}</div>
+      <div>
+        <div class="profile-name">@${esc(currentLogin)}</div>
+        <div class="profile-meta">Аккаунт создан ${esc(created)}</div>
+      </div>
+    </div>
+    <div class="profile-stats">
+      <div><div class="profile-stat-label">Потрачено</div><div class="profile-stat-value">${fmtMoney(totalAll)}</div></div>
+      <div><div class="profile-stat-label">Авто</div><div class="profile-stat-value">${u.cars.length}</div></div>
+      <div><div class="profile-stat-label">Ремонтов</div><div class="profile-stat-value">${u.repairs.length}</div></div>
+      <div><div class="profile-stat-label">Запчастей</div><div class="profile-stat-value">${u.parts.length}</div></div>
+    </div>
+    <div class="profile-section-title">Мои автомобили</div>
+    <div class="profile-cars">${carsHtml}</div>
+    <div class="modal-actions">
+      <button type="button" class="btn-ghost neutral" data-close-modal style="flex:1;padding:14px">Закрыть</button>
+    </div>
+  `;
+  $('#profileModal').classList.add('open');
+}
+
+$('#profileBtn').addEventListener('click', openProfile);
+
+/* ============================================================
+   ОТЧЁТ
+   ============================================================ */
+function renderReport() {
+  const u = currentUser();
+  const area = $('#reportArea');
+  if (!u) return;
+
+  const created = u.createdAt ? formatDateLong(u.createdAt) : '—';
+  const now = formatDateLong(Date.now());
+
+  let totalAll = 0, totalRep = 0, totalPart = 0;
+  u.cars.forEach(car => {
+    const s = carStats(car.id);
+    totalAll += s.total; totalRep += s.repairs.length; totalPart += s.parts.length;
+  });
+
+  let html = `
+    <div class="report">
+      <div class="report-header">
+        <div class="report-brand">
+          <div class="report-logo">Г</div>
+          <div>
+            <h1>Гараж</h1>
+            <div class="report-sub">Отчёт об обслуживании автомобилей</div>
+          </div>
+        </div>
+        <div class="report-meta">
+          <div><strong>Пользователь:</strong> @${esc(currentLogin)}</div>
+          <div><strong>Аккаунт создан:</strong> ${esc(created)}</div>
+          <div><strong>Отчёт сформирован:</strong> ${esc(now)}</div>
+        </div>
+      </div>
+
+      <div class="report-summary">
+        <div class="report-summary-card"><div class="report-summary-label">Всего потрачено</div><div class="report-summary-value">${fmtMoney(totalAll)}</div></div>
+        <div class="report-summary-card"><div class="report-summary-label">Автомобилей</div><div class="report-summary-value">${u.cars.length}</div></div>
+        <div class="report-summary-card"><div class="report-summary-label">Ремонтов</div><div class="report-summary-value">${totalRep}</div></div>
+        <div class="report-summary-card"><div class="report-summary-label">Запчастей</div><div class="report-summary-value">${totalPart}</div></div>
+      </div>
+
+      <h2>Автомобили</h2>
+  `;
+
+  if (!u.cars.length) {
+    html += `<div class="report-empty">Автомобили не добавлены</div>`;
+  } else {
+    u.cars.forEach(car => {
+      const s = carStats(car.id);
+      const details = [
+        car.year && car.year + ' г.',
+        car.engine && car.engine + ' л',
+        car.plate,
+        car.color,
+        car.vin && 'VIN ' + car.vin
+      ].filter(Boolean).map(esc).join(' · ') || '—';
+
+      const repRows = s.repairs.length
+        ? s.repairs.sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(r => `
+            <tr>
+              <td>${esc(fmtDate(r.date))}</td>
+              <td>${esc(r.work)}</td>
+              <td>${esc(r.note || '—')}</td>
+              <td class="num">${fmtMoney(r.cost)}</td>
+            </tr>`).join('')
+        : '';
+
+      const partRows = s.parts.length
+        ? s.parts.sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(p => `
+            <tr>
+              <td>${esc(fmtDate(p.date))}</td>
+              <td>${esc(p.name)}</td>
+              <td class="num">${esc(p.qty || 1)}</td>
+              <td>${esc(p.shop || '—')}</td>
+              <td class="num">${fmtMoney(p.cost)}</td>
+            </tr>`).join('')
+        : '';
+
+      html += `
+        <div class="report-car">
+          <div class="report-car-head">
+            <img class="report-car-logo" src="${brandLogoUrl(car.brand)}" alt="" onerror="this.style.display='none'">
+            <div class="report-car-title">
+              <h3>${esc(carLabel(car))}</h3>
+              <div class="report-car-details">${details}</div>
+            </div>
+            <div class="report-car-total">${fmtMoney(s.total)}</div>
+          </div>
+
+          <h4>Ремонты (${s.repairs.length})</h4>
+          ${s.repairs.length ? `
+            <table class="report-table">
+              <thead><tr><th>Дата</th><th>Работа</th><th>Заметка</th><th class="num">Стоимость</th></tr></thead>
+              <tbody>${repRows}</tbody>
+              <tfoot><tr><td colspan="3">Итого ремонтов</td><td class="num">${fmtMoney(s.repairSum)}</td></tr></tfoot>
+            </table>
+          ` : `<div class="report-empty-small">Ремонтов не зафиксировано</div>`}
+
+          <h4>Запчасти (${s.parts.length})</h4>
+          ${s.parts.length ? `
+            <table class="report-table">
+              <thead><tr><th>Дата</th><th>Название</th><th class="num">Кол-во</th><th>Магазин</th><th class="num">Стоимость</th></tr></thead>
+              <tbody>${partRows}</tbody>
+              <tfoot><tr><td colspan="4">Итого запчастей</td><td class="num">${fmtMoney(s.partsSum)}</td></tr></tfoot>
+            </table>
+          ` : `<div class="report-empty-small">Запчастей не зафиксировано</div>`}
+        </div>
+      `;
+    });
+  }
+
+  html += `
+      <div class="report-foot">
+        Документ сформирован автоматически в приложении «Гараж» · ${esc(now)}
+      </div>
+    </div>
+  `;
+
+  area.innerHTML = html;
+}
+
+/* ============================================================
+   ПЕЧАТЬ / PDF
+   ============================================================ */
+$('#printBtn').addEventListener('click', () => window.print());
+$('#pdfBtn').addEventListener('click', () => window.print());
+
+/* ============================================================
+   МОДАЛКИ: ЗАКРЫТИЕ
    ============================================================ */
 $('#editModal').addEventListener('click', e => {
   if (e.target.id === 'editModal' || e.target.closest('[data-close-modal]')) {
     $('#editModal').classList.remove('open');
+  }
+});
+$('#profileModal').addEventListener('click', e => {
+  if (e.target.id === 'profileModal' || e.target.closest('[data-close-modal]')) {
+    $('#profileModal').classList.remove('open');
   }
 });
 
