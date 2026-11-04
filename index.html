@@ -11,7 +11,7 @@
     --accent:#3b82f6;
     --accent2:#8b5cf6;
     --danger:#f43f5e;
-    --radius:20px;
+    --radius:22px;
   }
   *{box-sizing:border-box}
   html,body{margin:0}
@@ -34,22 +34,22 @@
     position:absolute;border-radius:50%;
     filter:blur(90px);opacity:.5;will-change:transform;
   }
-  .blob-1{width:500px;height:500px;background:#2563eb;top:-150px;left:-100px;animation:float1 22s ease-in-out infinite}
-  .blob-2{width:600px;height:600px;background:#7c3aed;top:20%;right:-220px;animation:float2 28s ease-in-out infinite}
-  .blob-3{width:420px;height:420px;background:#ec4899;bottom:-120px;left:30%;opacity:.35;animation:float3 24s ease-in-out infinite}
-  .blob-4{width:350px;height:350px;background:#06b6d4;top:55%;left:-120px;opacity:.3;animation:float1 30s ease-in-out infinite reverse}
+  .blob-1{width:520px;height:520px;background:#2563eb;top:-160px;left:-110px;animation:float1 22s ease-in-out infinite}
+  .blob-2{width:620px;height:620px;background:#7c3aed;top:18%;right:-240px;animation:float2 28s ease-in-out infinite}
+  .blob-3{width:440px;height:440px;background:#ec4899;bottom:-140px;left:28%;opacity:.35;animation:float3 24s ease-in-out infinite}
+  .blob-4{width:360px;height:360px;background:#06b6d4;top:58%;left:-130px;opacity:.3;animation:float1 30s ease-in-out infinite reverse}
   @keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(80px,60px) scale(1.1)}}
   @keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-100px,80px) scale(.95)}}
   @keyframes float3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,-80px) scale(1.15)}}
 
   /* ---------- СТЕКЛО ---------- */
   .glass{
-    background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
-    backdrop-filter:blur(24px) saturate(160%);
-    -webkit-backdrop-filter:blur(24px) saturate(160%);
-    border:1px solid rgba(255,255,255,.1);
+    background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.028));
+    backdrop-filter:blur(26px) saturate(170%);
+    -webkit-backdrop-filter:blur(26px) saturate(170%);
+    border:1px solid rgba(255,255,255,.11);
     border-radius:var(--radius);
-    box-shadow:0 8px 32px rgba(0,0,0,.37),inset 0 1px 0 rgba(255,255,255,.08);
+    box-shadow:0 8px 34px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.09);
   }
 
   /* ---------- ЭКРАНЫ ---------- */
@@ -57,10 +57,7 @@
   .screen.active{display:block;animation:screenIn .55s cubic-bezier(.22,1,.36,1)}
   @keyframes screenIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-  #welcome.active,#auth.active{
-    display:flex;align-items:center;justify-content:center;
-  }
+  #welcome.active,#auth.active{display:flex;align-items:center;justify-content:center}
 
   /* ---------- БРЕНД ---------- */
   .brand-mark{
@@ -82,15 +79,12 @@
   /* ---------- WELCOME ---------- */
   .welcome-wrap{max-width:760px;text-align:center;padding:20px;animation:fadeUp .8s ease}
   .welcome-title{
-    font-size:56px;font-weight:800;letter-spacing:-2px;margin:0 0 8px;
+    font-size:58px;font-weight:800;letter-spacing:-2.5px;margin:0 0 8px;
     background:linear-gradient(135deg,#fff,#a5b4fc);
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
   .welcome-tag{font-size:18px;color:#a5b4fc;margin:0 0 18px}
-  .welcome-story{
-    font-size:15px;color:var(--muted);line-height:1.65;
-    max-width:540px;margin:0 auto 30px;
-  }
+  .welcome-story{font-size:15px;color:var(--muted);line-height:1.65;max-width:540px;margin:0 auto 30px}
   .features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:32px}
   .feature{padding:20px 12px;text-align:center;animation:fadeUp .8s ease backwards}
   .feature:nth-child(1){animation-delay:.1s}
@@ -105,13 +99,13 @@
   .btn-primary{
     width:100%;font:inherit;font-size:15px;font-weight:600;color:#fff;
     background:linear-gradient(135deg,#3b82f6,#8b5cf6);
-    border:none;padding:13px;border-radius:12px;cursor:pointer;
+    border:none;padding:14px;border-radius:14px;cursor:pointer;
     transition:transform .1s,box-shadow .2s,filter .2s;
-    box-shadow:0 8px 24px rgba(59,130,246,.3);
+    box-shadow:0 8px 26px rgba(59,130,246,.32);
   }
-  .btn-primary:hover{filter:brightness(1.1);box-shadow:0 10px 30px rgba(139,92,246,.42)}
+  .btn-primary:hover{filter:brightness(1.12);box-shadow:0 10px 32px rgba(139,92,246,.45)}
   .btn-primary:active{transform:translateY(1px)}
-  .btn-primary.big{width:auto;padding:16px 42px;font-size:16px;border-radius:999px}
+  .btn-primary.big{width:auto;padding:16px 44px;font-size:16px;border-radius:999px}
   .btn-ghost{
     background:rgba(255,255,255,.05);
     border:1px solid rgba(255,255,255,.1);
@@ -119,10 +113,7 @@
     font:inherit;font-size:13px;cursor:pointer;transition:all .2s;
   }
   .btn-ghost:hover{background:rgba(244,63,94,.15);color:#fca5a5;border-color:rgba(244,63,94,.3)}
-  .link-btn{
-    background:none;border:none;color:#a5b4fc;font:inherit;font-size:13px;
-    cursor:pointer;padding:8px 0;transition:color .2s;
-  }
+  .link-btn{background:none;border:none;color:#a5b4fc;font:inherit;font-size:13px;cursor:pointer;padding:8px 0;transition:color .2s}
   .link-btn:hover{color:#fff}
   .welcome-foot{font-size:12px;color:var(--muted);margin-top:20px}
 
@@ -134,14 +125,15 @@
   /* ---------- ПОЛЯ ---------- */
   .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
   .field label{font-size:13px;color:var(--muted);font-weight:500}
-  input{
+  .field .hint{font-size:11px;color:#64748b;margin-top:2px}
+  input,select{
     width:100%;font:inherit;font-size:15px;color:var(--text);
     background:rgba(0,0,0,.25);
     border:1px solid rgba(255,255,255,.1);
     padding:12px 14px;border-radius:12px;outline:none;
     transition:border-color .2s,box-shadow .2s,background .2s;
   }
-  input:focus{
+  input:focus,select:focus{
     border-color:rgba(99,102,241,.6);
     box-shadow:0 0 0 4px rgba(99,102,241,.15);
     background:rgba(0,0,0,.35);
@@ -152,12 +144,24 @@
   .auth-error{color:#fca5a5;font-size:13px;min-height:18px;margin-bottom:8px}
   .auth-links{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:14px}
 
-  /* ---------- APP ---------- */
-  .app-shell{
-    max-width:920px;margin:0 auto;
-    display:flex;flex-direction:column;gap:14px;
-    animation:fadeUp .5s ease;
+  /* ---------- AUTOCOMPLETE ---------- */
+  .autocomplete-wrap{position:relative}
+  .autocomplete-list{
+    position:absolute;top:100%;left:0;right:0;z-index:50;
+    background:#151a2e;border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;margin-top:4px;max-height:200px;overflow-y:auto;
+    box-shadow:0 12px 30px rgba(0,0,0,.5);display:none;
   }
+  .autocomplete-list.open{display:block;animation:tabIn .2s ease}
+  .autocomplete-item{
+    padding:10px 14px;font-size:14px;cursor:pointer;transition:background .15s;
+    display:flex;align-items:center;gap:8px;
+  }
+  .autocomplete-item:hover,.autocomplete-item.active{background:rgba(99,102,241,.2)}
+  .autocomplete-item .logo-mini{width:20px;height:20px;object-fit:contain}
+
+  /* ---------- APP ---------- */
+  .app-shell{max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:14px;animation:fadeUp .5s ease}
   .topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px}
   .topbar-left{display:flex;align-items:center;gap:12px}
   .topbar-title{font-weight:700;font-size:16px;letter-spacing:-.3px}
@@ -180,14 +184,16 @@
     border-color:rgba(139,92,246,.5);color:#fff;
     box-shadow:0 4px 20px rgba(59,130,246,.25);
   }
+  .car-pill-logo{width:22px;height:22px;object-fit:contain;flex-shrink:0}
   .car-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 
   /* ---------- ТАБЫ ---------- */
-  .tabs{display:flex;padding:6px;gap:4px}
+  .tabs{display:flex;padding:6px;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
   .tab-btn{
-    flex:1;background:transparent;border:none;color:var(--muted);
+    flex:1;min-width:100px;background:transparent;border:none;color:var(--muted);
     padding:11px 16px;border-radius:14px;font:inherit;font-size:14px;
-    font-weight:500;cursor:pointer;transition:color .2s,background .2s;
+    font-weight:500;cursor:pointer;transition:color .2s,background .2s;white-space:nowrap;
   }
   .tab-btn:hover:not(.active){color:var(--text)}
   .tab-btn.active{
@@ -210,7 +216,7 @@
   .card-head{
     padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.06);
     font-weight:600;font-size:14px;display:flex;justify-content:space-between;
-    align-items:baseline;gap:8px;
+    align-items:baseline;gap:8px;flex-wrap:wrap;
   }
   .card-sub{font-size:12px;color:var(--muted);font-weight:400}
 
@@ -221,11 +227,9 @@
 
   .list{list-style:none;margin:0;padding:0}
   .record{
-    display:grid;grid-template-columns:92px 1fr auto 32px;
-    grid-template-areas:"date body cost del";
+    display:grid;grid-template-columns:92px 1fr auto auto;grid-template-areas:"date body cost actions";
     gap:12px;align-items:center;padding:14px 20px;
-    border-bottom:1px solid rgba(255,255,255,.05);
-    transition:background .2s;
+    border-bottom:1px solid rgba(255,255,255,.05);transition:background .2s;
   }
   .record:hover{background:rgba(255,255,255,.03)}
   .record:last-child{border-bottom:none}
@@ -234,18 +238,18 @@
   .r-title{font-weight:500;font-size:15px;overflow-wrap:anywhere}
   .r-note{font-size:13px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
   .r-cost{grid-area:cost;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .r-actions{grid-area:actions;display:flex;gap:4px}
+  .r-del,.r-edit{
+    width:30px;height:30px;background:transparent;color:#64748b;font-size:14px;
+    display:grid;place-items:center;padding:0;border:none;border-radius:8px;cursor:pointer;transition:all .2s;
+  }
+  .r-del:hover{background:rgba(244,63,94,.15);color:#fca5a5}
+  .r-edit:hover{background:rgba(59,130,246,.2);color:#93c5fd}
   .qty-badge{
     display:inline-block;font-size:11px;font-weight:600;
     background:rgba(139,92,246,.25);color:#c4b5fd;
     padding:2px 7px;border-radius:6px;margin-left:6px;vertical-align:middle;
   }
-  .r-del{
-    grid-area:del;width:30px;height:30px;background:transparent;
-    color:#64748b;font-size:14px;display:grid;place-items:center;
-    padding:0;border:none;border-radius:8px;cursor:pointer;transition:all .2s;
-  }
-  .r-del:hover{background:rgba(244,63,94,.15);color:#fca5a5}
-
   .empty{padding:32px 20px;text-align:center;color:var(--muted);font-size:14px}
   .no-car{padding:26px 20px;text-align:center;color:var(--muted);font-size:14px}
 
@@ -255,10 +259,13 @@
   .car-card.active{border-color:rgba(139,92,246,.5)}
   .car-card-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
   .car-avatar{
-    width:46px;height:46px;border-radius:14px;display:grid;place-items:center;
-    font-weight:800;font-size:20px;color:#fff;flex-shrink:0;
+    width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
+    flex-shrink:0;overflow:hidden;
+    background:rgba(255,255,255,.06);
     box-shadow:0 4px 16px rgba(0,0,0,.3);
   }
+  .car-avatar img{width:36px;height:36px;object-fit:contain}
+  .car-avatar .letter{font-weight:800;font-size:20px;color:#fff}
   .car-card-info{flex:1;min-width:0}
   .car-card-title{font-weight:600;font-size:16px;letter-spacing:-.2px}
   .car-card-sub{font-size:12px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
@@ -268,14 +275,14 @@
     border:1px solid rgba(139,92,246,.35);flex-shrink:0;
   }
   .car-card-stats{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
     padding:12px 0;border-top:1px solid rgba(255,255,255,.06);
     border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:12px;
   }
   .car-card-stats div{display:flex;flex-direction:column;gap:2px}
-  .car-card-stats span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
-  .car-card-stats b{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
-  .car-card-actions{display:flex;gap:8px}
+  .car-card-stats span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+  .car-card-stats b{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+  .car-card-actions{display:flex;gap:8px;flex-wrap:wrap}
   .btn-mini{
     background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
     color:var(--text);font:inherit;font-size:13px;font-weight:500;
@@ -284,8 +291,51 @@
   .btn-mini:hover{background:rgba(255,255,255,.12)}
   .btn-mini.danger{color:#fca5a5}
   .btn-mini.danger:hover{background:rgba(244,63,94,.15);border-color:rgba(244,63,94,.3)}
+  .btn-mini.accent{background:rgba(59,130,246,.18);border-color:rgba(59,130,246,.35);color:#93c5fd}
+  .btn-mini.accent:hover{background:rgba(59,130,246,.3)}
 
-  /* ---------- МОБИЛЬНАЯ ВЕРСИЯ ---------- */
+  /* ---------- МОДАЛКА ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6);
+    backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px;
+  }
+  .modal-overlay.open{display:flex;animation:screenIn .25s ease}
+  .modal{
+    width:100%;max-width:560px;max-height:90vh;overflow-y:auto;
+    padding:26px 24px;animation:fadeUp .3s ease;
+  }
+  .modal h3{margin:0 0 18px;font-size:20px;letter-spacing:-.4px}
+  .modal .entry-form{padding:0}
+  .modal-actions{display:flex;gap:10px;margin-top:18px}
+  .modal-actions .btn-primary{flex:1}
+  .modal-actions .btn-ghost{flex:0 0 auto;padding:14px 20px}
+
+  /* ---------- ПОИСК ЗАПЧАСТЕЙ ---------- */
+  .search-panel{padding:18px 20px}
+  .search-row{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end}
+  .search-row .field{margin-bottom:0}
+  .search-results{padding:0 20px 18px}
+  .search-empty{font-size:13px;color:var(--muted);padding:10px 0}
+  .shop-card{
+    padding:14px 16px;margin-bottom:10px;border-radius:14px;
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+    transition:border-color .2s;
+  }
+  .shop-card:hover{border-color:rgba(139,92,246,.35)}
+  .shop-name{font-weight:600;font-size:14px;margin-bottom:4px}
+  .shop-meta{font-size:12px;color:var(--muted);line-height:1.6}
+  .shop-meta a{color:#93c5fd;text-decoration:none}
+  .shop-meta a:hover{text-decoration:underline}
+  .search-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .search-link-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(59,130,246,.18);border:1px solid rgba(59,130,246,.35);
+    color:#93c5fd;padding:9px 14px;border-radius:10px;font:inherit;font-size:13px;
+    text-decoration:none;transition:all .2s;
+  }
+  .search-link-btn:hover{background:rgba(59,130,246,.3);color:#fff}
+
+  /* ---------- МОБИЛЬНАЯ ---------- */
   @media (max-width:640px){
     .welcome-title{font-size:42px}
     .features{grid-template-columns:repeat(2,1fr)}
@@ -296,13 +346,13 @@
     .entry-form{grid-template-columns:1fr}
     .record{
       grid-template-columns:1fr auto;
-      grid-template-areas:"date del" "body cost";
+      grid-template-areas:"date actions" "body cost";
       row-gap:6px;
     }
     .r-cost{align-self:end;justify-self:end}
-    .car-card-stats{grid-template-columns:repeat(3,1fr)}
-    .car-card-stats b{font-size:13px}
-    .tab-btn{padding:10px 8px;font-size:13px}
+    .car-card-stats{grid-template-columns:repeat(2,1fr)}
+    .tab-btn{padding:10px 8px;font-size:13px;min-width:80px}
+    .search-row{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -326,26 +376,10 @@
       Вся история, статистика и затраты всегда под рукой, в одном месте.
     </p>
     <div class="features">
-      <div class="feature glass">
-        <div class="feature-icon">🛠️</div>
-        <div class="feature-title">Учёт ремонтов</div>
-        <div class="feature-text">Что сделали и сколько заплатили</div>
-      </div>
-      <div class="feature glass">
-        <div class="feature-icon">🔩</div>
-        <div class="feature-title">Запчасти</div>
-        <div class="feature-text">Покупки, магазины и цены</div>
-      </div>
-      <div class="feature glass">
-        <div class="feature-icon">🚗</div>
-        <div class="feature-title">Несколько авто</div>
-        <div class="feature-text">Отдельная статистика для каждой</div>
-      </div>
-      <div class="feature glass">
-        <div class="feature-icon">📊</div>
-        <div class="feature-title">Прозрачные расходы</div>
-        <div class="feature-text">Всегда видно, куда ушли деньги</div>
-      </div>
+      <div class="feature glass"><div class="feature-icon">🛠️</div><div class="feature-title">Учёт ремонтов</div><div class="feature-text">Что сделали и сколько заплатили</div></div>
+      <div class="feature glass"><div class="feature-icon">🔩</div><div class="feature-title">Запчасти</div><div class="feature-text">Покупки, магазины и цены</div></div>
+      <div class="feature glass"><div class="feature-icon">🚗</div><div class="feature-title">Несколько авто</div><div class="feature-text">Отдельная статистика для каждой</div></div>
+      <div class="feature glass"><div class="feature-icon">🔍</div><div class="feature-title">Поиск по VIN</div><div class="feature-text">Ссылки на магазины и контакты</div></div>
     </div>
     <button class="btn-primary big" id="startBtn">Создать гараж</button>
     <p class="welcome-foot">Данные хранятся только в вашем браузере</p>
@@ -401,6 +435,7 @@
       <button class="tab-btn active" data-tab="repairs">Ремонт</button>
       <button class="tab-btn" data-tab="parts">Запчасти</button>
       <button class="tab-btn" data-tab="cars">Автомобили</button>
+      <button class="tab-btn" data-tab="search">Поиск запчастей</button>
     </nav>
 
     <div class="stats-row" id="statsRow"></div>
@@ -482,25 +517,41 @@
         <form id="carForm" class="entry-form">
           <div class="field">
             <label for="carBrand">Марка</label>
-            <input type="text" id="carBrand" required placeholder="Lada">
+            <div class="autocomplete-wrap">
+              <input type="text" id="carBrand" required placeholder="Начните вводить: Lada, Toyota…" autocomplete="off">
+              <div class="autocomplete-list" id="brandSuggest"></div>
+            </div>
           </div>
           <div class="field">
             <label for="carModel">Модель</label>
-            <input type="text" id="carModel" required placeholder="Vesta">
+            <div class="autocomplete-wrap">
+              <input type="text" id="carModel" required placeholder="Начните вводить модель" autocomplete="off">
+              <div class="autocomplete-list" id="modelSuggest"></div>
+            </div>
           </div>
           <div class="field">
             <label for="carYear">Год</label>
             <input type="number" id="carYear" min="1900" max="2100" placeholder="2019">
           </div>
           <div class="field">
-            <label for="carPlate">Госномер</label>
-            <input type="text" id="carPlate" placeholder="А123БВ 77">
+            <label for="carPlate">Госномер РФ</label>
+            <input type="text" id="carPlate" required placeholder="А123ВС77" maxlength="9">
+            <div class="hint">1 буква + 3 цифры + 2 буквы + регион</div>
+          </div>
+          <div class="field">
+            <label for="carEngine">Объём двигателя, л</label>
+            <input type="number" id="carEngine" min="0.5" max="10" step="0.1" placeholder="1.6">
+          </div>
+          <div class="field">
+            <label for="carVin">VIN (необязательно)</label>
+            <input type="text" id="carVin" maxlength="17" placeholder="17 символов" style="text-transform:uppercase">
           </div>
           <div class="field full">
             <label for="carColor">Цвет</label>
             <input type="text" id="carColor" placeholder="Необязательно">
           </div>
-          <button type="submit" class="btn-primary">Добавить автомобиль</button>
+          <button type="submit" class="btn-primary" id="carSubmitBtn">Добавить автомобиль</button>
+          <input type="hidden" id="carEditId">
         </form>
       </div>
 
@@ -510,15 +561,45 @@
       </div>
     </div>
 
+    <!-- ---- ПОИСК ЗАПЧАСТЕЙ ---- -->
+    <div class="tab-content" id="tab-search">
+      <div class="glass card">
+        <div class="card-head">Поиск запчастей по VIN и названию</div>
+        <div class="search-panel">
+          <p class="card-sub" style="margin:0 0 16px">
+            Введите VIN (если сохранён в авто — подставится автоматически) и название детали.
+            Ниже появятся прямые ссылки на поиск в магазинах и контакты.
+          </p>
+          <div class="search-row">
+            <div class="field">
+              <label for="searchVin">VIN</label>
+              <input type="text" id="searchVin" maxlength="17" placeholder="XTA21150053912345" style="text-transform:uppercase">
+            </div>
+            <div class="field">
+              <label for="searchPart">Название запчасти</label>
+              <input type="text" id="searchPart" placeholder="Например: фильтр масляный">
+            </div>
+            <button class="btn-primary" id="searchPartsBtn" style="width:auto;padding:12px 24px">Найти</button>
+          </div>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+
   </div>
 </section>
+
+<!-- ============ МОДАЛКА РЕДАКТИРОВАНИЯ ============ -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal glass" id="editModalContent"></div>
+</div>
 
 <script>
 /* ============================================================
    ХРАНИЛИЩЕ
    ============================================================ */
-const LS_USERS   = 'garage.users.v1';
-const LS_SESSION = 'garage.session.v1';
+const LS_USERS   = 'garage.users.v2';
+const LS_SESSION = 'garage.session.v2';
 const LS_CAR     = login => 'garage.car.' + login;
 
 /* ============================================================
@@ -548,16 +629,72 @@ const todayISO = () => {
 
 const genId = p => p + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 
-function carLabel(car) {
-  return [car.brand, car.model].filter(Boolean).join(' ') || 'Автомобиль';
+/* ============================================================
+   БАЗА ДЛЯ АВТОДОПОЛНЕНИЯ (популярные марки и модели)
+   ============================================================ */
+const CAR_DB = {
+  "Lada": ["Vesta", "Granta", "Niva", "XRAY", "Largus", "Priora", "Kalina"],
+  "Toyota": ["Camry", "Corolla", "RAV4", "Land Cruiser", "Highlander", "C-HR", "Supra"],
+  "Volkswagen": ["Polo", "Golf", "Passat", "Tiguan", "Touareg", "Jetta", "Arteon"],
+  "Kia": ["Rio", "Sportage", "Ceed", "K5", "Sorento", "Seltos", "Cerato"],
+  "Hyundai": ["Solaris", "Creta", "Tucson", "Santa Fe", "Elantra", "i30", "Sonata"],
+  "BMW": ["3 Series", "5 Series", "7 Series", "X3", "X5", "X6", "X7", "M3", "M5"],
+  "Mercedes-Benz": ["C-Class", "E-Class", "S-Class", "GLC", "GLE", "GLS", "A-Class", "V-Class"],
+  "Audi": ["A4", "A6", "A8", "Q5", "Q7", "Q8", "TT", "RS6"],
+  "Nissan": ["Qashqai", "X-Trail", "Almera", "Juke", "Murano", "Patrol", "GT-R"],
+  "Ford": ["Focus", "Mondeo", "Kuga", "Explorer", "Mustang", "Transit", "Fiesta"],
+  "Mazda": ["3", "6", "CX-5", "CX-30", "CX-9", "MX-5"],
+  "Skoda": ["Octavia", "Kodiaq", "Karoq", "Superb", "Rapid", "Fabia"],
+  "Renault": ["Logan", "Duster", "Sandero", "Arkana", "Kaptur", "Megane"],
+  "Honda": ["Civic", "Accord", "CR-V", "Pilot", "Fit", "HR-V"],
+  "Peugeot": ["208", "308", "408", "3008", "5008", "2008"],
+  "Volvo": ["XC40", "XC60", "XC90", "S60", "S90", "V60"],
+  "Land Rover": ["Discovery", "Range Rover", "Range Rover Sport", "Defender", "Evoque"],
+  "Lexus": ["RX", "NX", "GX", "LX", "ES", "IS", "LS"],
+  "Subaru": ["Forester", "Outback", "Impreza", "XV", "Legacy", "BRZ"],
+  "Chery": ["Tiggo 4", "Tiggo 7", "Tiggo 8", "Arrizo 8", "Explore 06"],
+  "Geely": ["Coolray", "Atlas", "Tugella", "Monjaro", "Emgrand"],
+  "Haval": ["Jolion", "F7", "Dargo", "H9", "H5"],
+  "Exeed": ["TXL", "VX", "LX", "RX"],
+  "Tesla": ["Model S", "Model 3", "Model X", "Model Y"]
+};
+
+/* ============================================================
+   ЛОГОТИПЫ БРЕНДОВ (CDN jsDelivr)
+   ============================================================ */
+function brandLogoUrl(brand) {
+  if (!brand) return '';
+  const slug = brand.toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+  return `https://cdn.jsdelivr.net/gh/vehiclespecs/brand-logos@v1.0.0/${slug}-logo.svg`;
 }
-function carHue(car) {
-  const s = carLabel(car) + (car.year || '');
-  let h = 0;
-  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
-  return h;
+
+/* ============================================================
+   ВАЛИДАЦИЯ ГОСНОМЕРА РФ
+   ============================================================ */
+const PLATE_LETTERS = 'АВЕКМНОРСТУХ';
+const PLATE_REGEX = /^[АВЕКМНОРСТУХ]\d{3}[АВЕКМНОРСТУХ]{2}\d{2,3}$/;
+
+function normalizePlate(input) {
+  let v = input.toUpperCase().replace(/\s+/g, '');
+  // латиница -> кириллица
+  const latToCyr = {A:'А',B:'В',E:'Е',K:'К',M:'М',H:'Н',O:'О',P:'Р',C:'С',T:'Т',Y:'У',X:'Х'};
+  v = v.split('').map(ch => latToCyr[ch] || ch).join('');
+  return v;
 }
-const carColor = car => `hsl(${carHue(car)}, 70%, 58%)`;
+
+function validatePlate(plate) {
+  return PLATE_REGEX.test(normalizePlate(plate));
+}
+
+/* ============================================================
+   VIN
+   ============================================================ */
+function validateVin(vin) {
+  if (!vin) return true; // опционально
+  return /^[A-HJ-NPR-Z0-9]{17}$/i.test(vin.trim());
+}
 
 /* ============================================================
    СОСТОЯНИЕ
@@ -566,6 +703,7 @@ let users = {};
 let currentLogin = null;
 let currentCarId = null;
 let authMode = 'login';
+let editingCarId = null;
 
 /* ============================================================
    ЭКРАНЫ
@@ -635,13 +773,7 @@ $('#authForm').addEventListener('submit', e => {
     if (pass !== pass2) { err.textContent = 'Пароли не совпадают'; return; }
     if (users[login])   { err.textContent = 'Такой логин уже занят'; return; }
 
-    users[login] = {
-      password: pass,
-      createdAt: Date.now(),
-      cars: [],
-      repairs: [],
-      parts: []
-    };
+    users[login] = { password: pass, createdAt: Date.now(), cars: [], repairs: [], parts: [] };
     saveUsers();
     startSession(login);
   } else {
@@ -651,9 +783,7 @@ $('#authForm').addEventListener('submit', e => {
   }
 });
 
-$('#authToggle').addEventListener('click', () => {
-  setAuthMode(authMode === 'login' ? 'register' : 'login');
-});
+$('#authToggle').addEventListener('click', () => setAuthMode(authMode === 'login' ? 'register' : 'login'));
 $('#backToWelcome').addEventListener('click', () => showScreen('welcome'));
 $('#startBtn').addEventListener('click', () => {
   setAuthMode(Object.keys(users).length ? 'login' : 'register');
@@ -692,18 +822,98 @@ function selectedCar() {
   return u ? u.cars.find(c => c.id === currentCarId) : null;
 }
 
+function carLabel(car) {
+  return [car.brand, car.model].filter(Boolean).join(' ') || 'Автомобиль';
+}
+
 function carStats(carId) {
   const u = currentUser();
   const repairs = u.repairs.filter(r => r.carId === carId);
   const parts   = u.parts.filter(p => p.carId === carId);
   const repairSum = repairs.reduce((s, r) => s + (Number(r.cost) || 0), 0);
   const partsSum  = parts.reduce((s, p) => s + (Number(p.cost) || 0), 0);
-  return {
-    repairs, parts,
-    repairSum, partsSum,
-    total: repairSum + partsSum
-  };
+  return { repairs, parts, repairSum, partsSum, total: repairSum + partsSum };
 }
+
+/* ============================================================
+   АВТОДОПОЛНЕНИЕ
+   ============================================================ */
+function setupAutocomplete(inputEl, listEl, getSuggestions, onSelect) {
+  let activeIdx = -1;
+
+  function close() { listEl.classList.remove('open'); activeIdx = -1; }
+
+  function render(items) {
+    if (!items.length) { close(); return; }
+    activeIdx = -1;
+    listEl.innerHTML = items.map((item, i) =>
+      `<div class="autocomplete-item" data-idx="${i}">${esc(item)}</div>`
+    ).join('');
+    listEl.classList.add('open');
+
+    listEl.querySelectorAll('.autocomplete-item').forEach(el => {
+      el.addEventListener('mousedown', e => {
+        e.preventDefault();
+        onSelect(el.textContent);
+        close();
+      });
+    });
+  }
+
+  inputEl.addEventListener('input', () => {
+    const val = inputEl.value.trim().toLowerCase();
+    if (!val) { close(); return; }
+    const items = getSuggestions(val).slice(0, 8);
+    render(items);
+  });
+
+  inputEl.addEventListener('keydown', e => {
+    if (!listEl.classList.contains('open')) return;
+    const items = listEl.querySelectorAll('.autocomplete-item');
+    if (!items.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      activeIdx = Math.min(activeIdx + 1, items.length - 1);
+      items.forEach((el, i) => el.classList.toggle('active', i === activeIdx));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      activeIdx = Math.max(activeIdx - 1, 0);
+      items.forEach((el, i) => el.classList.toggle('active', i === activeIdx));
+    } else if (e.key === 'Enter' && activeIdx >= 0) {
+      e.preventDefault();
+      onSelect(items[activeIdx].textContent);
+      close();
+    } else if (e.key === 'Escape') {
+      close();
+    }
+  });
+
+  inputEl.addEventListener('blur', () => setTimeout(close, 150));
+}
+
+/* марка */
+setupAutocomplete(
+  $('#carBrand'),
+  $('#brandSuggest'),
+  val => Object.keys(CAR_DB).filter(b => b.toLowerCase().includes(val)),
+  val => {
+    $('#carBrand').value = val;
+    $('#carModel').value = '';
+  }
+);
+
+/* модель */
+setupAutocomplete(
+  $('#carModel'),
+  $('#modelSuggest'),
+  val => {
+    const brand = $('#carBrand').value.trim();
+    const models = CAR_DB[brand] || Object.values(CAR_DB).flat();
+    return models.filter(m => m.toLowerCase().includes(val));
+  },
+  val => { $('#carModel').value = val; }
+);
 
 /* ============================================================
    РЕНДЕР: ПАНЕЛЬ МАШИН
@@ -719,7 +929,7 @@ function renderCarBar() {
 
   bar.innerHTML = u.cars.map(car => `
     <button class="car-pill ${car.id === currentCarId ? 'active' : ''}" data-car="${esc(car.id)}">
-      <span class="car-dot" style="background:${carColor(car)}"></span>
+      <img class="car-pill-logo" src="${brandLogoUrl(car.brand)}" alt="" onerror="this.style.display='none'">
       <span>${esc(carLabel(car))}</span>
     </button>
   `).join('');
@@ -732,28 +942,15 @@ function renderStats() {
   const row = $('#statsRow');
   const car = selectedCar();
 
-  if (!car) {
-    row.innerHTML = '';
-    row.style.display = 'none';
-    return;
-  }
+  if (!car) { row.innerHTML = ''; row.style.display = 'none'; return; }
 
   row.style.display = 'grid';
   const s = carStats(car.id);
 
   row.innerHTML = `
-    <div class="stat-card glass">
-      <div class="stat-label">Потрачено</div>
-      <div class="stat-value">${fmtMoney(s.total)}</div>
-    </div>
-    <div class="stat-card glass">
-      <div class="stat-label">Ремонтов</div>
-      <div class="stat-value">${s.repairs.length}</div>
-    </div>
-    <div class="stat-card glass">
-      <div class="stat-label">Запчастей</div>
-      <div class="stat-value">${s.parts.length}</div>
-    </div>
+    <div class="stat-card glass"><div class="stat-label">Потрачено</div><div class="stat-value">${fmtMoney(s.total)}</div></div>
+    <div class="stat-card glass"><div class="stat-label">Ремонтов</div><div class="stat-value">${s.repairs.length}</div></div>
+    <div class="stat-card glass"><div class="stat-label">Запчастей</div><div class="stat-value">${s.parts.length}</div></div>
   `;
 }
 
@@ -765,11 +962,7 @@ function renderRepairs() {
   const list  = $('#repairList');
   const empty = $('#repairEmpty');
 
-  if (!car) {
-    list.innerHTML = '';
-    empty.hidden = true;
-    return;
-  }
+  if (!car) { list.innerHTML = ''; empty.hidden = true; return; }
 
   const items = currentUser().repairs
     .filter(r => r.carId === car.id)
@@ -791,7 +984,10 @@ function renderRepairs() {
         ${r.note ? `<div class="r-note">${esc(r.note)}</div>` : ''}
       </div>
       <div class="r-cost">${fmtMoney(r.cost)}</div>
-      <button class="r-del" data-del-repair="${esc(r.id)}" title="Удалить">✕</button>
+      <div class="r-actions">
+        <button class="r-edit" data-edit-repair="${esc(r.id)}" title="Редактировать">✎</button>
+        <button class="r-del" data-del-repair="${esc(r.id)}" title="Удалить">✕</button>
+      </div>
     </li>
   `).join('');
 }
@@ -804,11 +1000,7 @@ function renderParts() {
   const list  = $('#partList');
   const empty = $('#partEmpty');
 
-  if (!car) {
-    list.innerHTML = '';
-    empty.hidden = true;
-    return;
-  }
+  if (!car) { list.innerHTML = ''; empty.hidden = true; return; }
 
   const items = currentUser().parts
     .filter(p => p.carId === car.id)
@@ -826,14 +1018,13 @@ function renderParts() {
     <li class="record">
       <div class="r-date">${esc(fmtDate(p.date))}</div>
       <div class="r-body">
-        <div class="r-title">
-          ${esc(p.name)}
-          ${Number(p.qty) > 1 ? `<span class="qty-badge">×${esc(p.qty)}</span>` : ''}
-        </div>
+        <div class="r-title">${esc(p.name)}${Number(p.qty) > 1 ? `<span class="qty-badge">×${esc(p.qty)}</span>` : ''}</div>
         ${p.shop ? `<div class="r-note">Магазин: ${esc(p.shop)}</div>` : ''}
       </div>
       <div class="r-cost">${fmtMoney(p.cost)}</div>
-      <button class="r-del" data-del-part="${esc(p.id)}" title="Удалить">✕</button>
+      <div class="r-actions">
+        <button class="r-del" data-del-part="${esc(p.id)}" title="Удалить">✕</button>
+      </div>
     </li>
   `).join('');
 }
@@ -853,13 +1044,19 @@ function renderCars() {
   wrap.innerHTML = u.cars.map(car => {
     const s = carStats(car.id);
     const active = car.id === currentCarId;
-    const sub = [car.year, car.plate, car.color].filter(Boolean).map(esc).join(' · ') || '—';
+    const sub = [
+      car.year && car.year + ' г.',
+      car.engine && car.engine + ' л',
+      car.plate,
+      car.color
+    ].filter(Boolean).map(esc).join(' · ') || '—';
 
     return `
       <div class="car-card glass ${active ? 'active' : ''}">
         <div class="car-card-head">
-          <div class="car-avatar" style="background:${carColor(car)}">
-            ${esc((car.brand || '?')[0].toUpperCase())}
+          <div class="car-avatar">
+            <img src="${brandLogoUrl(car.brand)}" alt="${esc(car.brand)}" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+            <span class="letter" style="display:none">${esc((car.brand || '?')[0].toUpperCase())}</span>
           </div>
           <div class="car-card-info">
             <div class="car-card-title">${esc(carLabel(car))}</div>
@@ -871,9 +1068,11 @@ function renderCars() {
           <div><span>Потрачено</span><b>${fmtMoney(s.total)}</b></div>
           <div><span>Ремонтов</span><b>${s.repairs.length}</b></div>
           <div><span>Запчастей</span><b>${s.parts.length}</b></div>
+          <div><span>VIN</span><b>${car.vin ? esc(car.vin.slice(-6)) + '…' : '—'}</b></div>
         </div>
         <div class="car-card-actions">
           <button class="btn-mini" data-select-car="${esc(car.id)}">${active ? 'Выбран' : 'Выбрать'}</button>
+          <button class="btn-mini accent" data-edit-car="${esc(car.id)}">Редактировать</button>
           <button class="btn-mini danger" data-del-car="${esc(car.id)}">Удалить</button>
         </div>
       </div>
@@ -882,7 +1081,7 @@ function renderCars() {
 }
 
 /* ============================================================
-   ФОРМЫ: доступность по наличию машины
+   ФОРМЫ: доступность
    ============================================================ */
 function updateFormsState() {
   const car = selectedCar();
@@ -914,10 +1113,13 @@ function renderAll() {
 function switchTab(name) {
   $$('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
   $$('.tab-content').forEach(c => c.classList.toggle('active', c.id === 'tab-' + name));
+
+  if (name === 'search') {
+    const car = selectedCar();
+    if (car && car.vin) $('#searchVin').value = car.vin;
+  }
 }
-$$('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => switchTab(btn.dataset.tab));
-});
+$$('.tab-btn').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
 
 /* ============================================================
    ПЕРЕКЛЮЧЕНИЕ МАШИНЫ
@@ -931,7 +1133,111 @@ $('#carBar').addEventListener('click', e => {
 });
 
 /* ============================================================
-   ДОБАВЛЕНИЕ РЕМОНТА
+   ДОБАВЛЕНИЕ / РЕДАКТИРОВАНИЕ АВТОМОБИЛЯ
+   ============================================================ */
+$('#carForm').addEventListener('submit', e => {
+  e.preventDefault();
+
+  const brand = $('#carBrand').value.trim();
+  const model = $('#carModel').value.trim();
+  const plate = normalizePlate($('#carPlate').value.trim());
+  const vin   = $('#carVin').value.trim().toUpperCase();
+
+  if (!brand || !model) return;
+  if (!validatePlate(plate)) { alert('Неверный формат госномера. Пример: А123ВС77'); return; }
+  if (!validateVin(vin))     { alert('VIN должен содержать 17 символов (без I, O, Q)'); return; }
+
+  const u = currentUser();
+  const editId = $('#carEditId').value;
+
+  const carData = {
+    brand, model,
+    year:   $('#carYear').value.trim(),
+    plate,
+    engine: $('#carEngine').value.trim(),
+    vin,
+    color:  $('#carColor').value.trim()
+  };
+
+  if (editId) {
+    const car = u.cars.find(c => c.id === editId);
+    if (car) Object.assign(car, carData);
+  } else {
+    const car = { id: genId('c'), ...carData };
+    u.cars.push(car);
+    if (!currentCarId) {
+      currentCarId = car.id;
+      localStorage.setItem(LS_CAR(currentLogin), currentCarId);
+    }
+  }
+
+  saveUsers();
+  resetCarForm();
+  renderAll();
+});
+
+function resetCarForm() {
+  $('#carForm').reset();
+  $('#carEditId').value = '';
+  $('#carSubmitBtn').textContent = 'Добавить автомобиль';
+  editingCarId = null;
+}
+
+/* ============================================================
+   ДЕЙСТВИЯ С МАШИНОЙ
+   ============================================================ */
+$('#carsList').addEventListener('click', e => {
+  const selectBtn = e.target.closest('[data-select-car]');
+  if (selectBtn) {
+    currentCarId = selectBtn.dataset.selectCar;
+    localStorage.setItem(LS_CAR(currentLogin), currentCarId);
+    renderAll();
+    switchTab('repairs');
+    return;
+  }
+
+  const editBtn = e.target.closest('[data-edit-car]');
+  if (editBtn) {
+    const car = currentUser().cars.find(c => c.id === editBtn.dataset.editCar);
+    if (!car) return;
+    editingCarId = car.id;
+    $('#carEditId').value = car.id;
+    $('#carBrand').value = car.brand || '';
+    $('#carModel').value = car.model || '';
+    $('#carYear').value  = car.year || '';
+    $('#carPlate').value = car.plate || '';
+    $('#carEngine').value = car.engine || '';
+    $('#carVin').value   = car.vin || '';
+    $('#carColor').value = car.color || '';
+    $('#carSubmitBtn').textContent = 'Сохранить изменения';
+    switchTab('cars');
+    $('#carBrand').focus();
+    return;
+  }
+
+  const delBtn = e.target.closest('[data-del-car]');
+  if (delBtn) {
+    const id = delBtn.dataset.delCar;
+    if (!confirm('Удалить автомобиль и всю его историю?')) return;
+
+    const u = currentUser();
+    u.cars    = u.cars.filter(c => c.id !== id);
+    u.repairs = u.repairs.filter(r => r.carId !== id);
+    u.parts   = u.parts.filter(p => p.carId !== id);
+
+    if (currentCarId === id) {
+      currentCarId = u.cars[0]?.id || null;
+      if (currentCarId) localStorage.setItem(LS_CAR(currentLogin), currentCarId);
+      else localStorage.removeItem(LS_CAR(currentLogin));
+    }
+
+    saveUsers();
+    renderAll();
+  }
+});
+
+/* ============================================================
+   ДОБАВЛЕНИЕ / РЕДАКТИРОВАНИЕ РЕМОНТА
    ============================================================ */
 $('#repairForm').addEventListener('submit', e => {
   e.preventDefault();
@@ -941,16 +1247,23 @@ $('#repairForm').addEventListener('submit', e => {
   const work = $('#repWork').value.trim();
   if (!work) return;
 
-  currentUser().repairs.push({
-    id: genId('r'),
-    carId: car.id,
+  const editId = $('#repairForm').dataset.editId;
+  const data = {
     date: $('#repDate').value || todayISO(),
     work,
     cost: parseFloat($('#repCost').value) || 0,
     note: $('#repNote').value.trim()
-  });
+  };
+
+  if (editId) {
+    const rec = currentUser().repairs.find(r => r.id === editId);
+    if (rec) Object.assign(rec, data);
+  } else {
+    currentUser().repairs.push({ id: genId('r'), carId: car.id, ...data });
+  }
   saveUsers();
 
+  delete $('#repairForm').dataset.editId;
   $('#repWork').value = '';
   $('#repCost').value = '';
   $('#repNote').value = '';
@@ -959,15 +1272,60 @@ $('#repairForm').addEventListener('submit', e => {
 });
 
 /* ============================================================
-   УДАЛЕНИЕ РЕМОНТА
+   РЕДАКТИРОВАНИЕ РЕМОНТА (модалка)
    ============================================================ */
 $('#repairList').addEventListener('click', e => {
-  const btn = e.target.closest('[data-del-repair]');
-  if (!btn) return;
-  const id = btn.dataset.delRepair;
-  currentUser().repairs = currentUser().repairs.filter(r => r.id !== id);
-  saveUsers();
-  renderAll();
+  const editBtn = e.target.closest('[data-edit-repair]');
+  if (editBtn) {
+    const rec = currentUser().repairs.find(r => r.id === editBtn.dataset.editRepair);
+    if (!rec) return;
+
+    $('#editModalContent').innerHTML = `
+      <h3>Редактировать ремонт</h3>
+      <form id="modalRepairForm" class="entry-form">
+        <div class="field">
+          <label>Дата</label>
+          <input type="date" id="mRepDate" value="${esc(rec.date)}" required>
+        </div>
+        <div class="field">
+          <label>Стоимость, ₽</label>
+          <input type="number" id="mRepCost" min="0" step="0.01" value="${esc(rec.cost)}">
+        </div>
+        <div class="field full">
+          <label>Что сделали</label>
+          <input type="text" id="mRepWork" value="${esc(rec.work)}" required>
+        </div>
+        <div class="field full">
+          <label>Заметка</label>
+          <input type="text" id="mRepNote" value="${esc(rec.note || '')}">
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-primary">Сохранить</button>
+          <button type="button" class="btn-ghost" data-close-modal>Отмена</button>
+        </div>
+      </form>
+    `;
+    $('#editModal').classList.add('open');
+
+    $('#modalRepairForm').addEventListener('submit', ev => {
+      ev.preventDefault();
+      rec.date = $('#mRepDate').value;
+      rec.cost = parseFloat($('#mRepCost').value) || 0;
+      rec.work = $('#mRepWork').value.trim();
+      rec.note = $('#mRepNote').value.trim();
+      saveUsers();
+      $('#editModal').classList.remove('open');
+      renderAll();
+    });
+    return;
+  }
+
+  const delBtn = e.target.closest('[data-del-repair]');
+  if (delBtn) {
+    currentUser().repairs = currentUser().repairs.filter(r => r.id !== delBtn.dataset.delRepair);
+    saveUsers();
+    renderAll();
+  }
 });
 
 /* ============================================================
@@ -1000,79 +1358,109 @@ $('#partForm').addEventListener('submit', e => {
   renderAll();
 });
 
-/* ============================================================
-   УДАЛЕНИЕ ЗАПЧАСТИ
-   ============================================================ */
 $('#partList').addEventListener('click', e => {
   const btn = e.target.closest('[data-del-part]');
   if (!btn) return;
-  const id = btn.dataset.delPart;
-  currentUser().parts = currentUser().parts.filter(p => p.id !== id);
+  currentUser().parts = currentUser().parts.filter(p => p.id !== btn.dataset.delPart);
   saveUsers();
   renderAll();
 });
 
 /* ============================================================
-   ДОБАВЛЕНИЕ МАШИНЫ
+   ПОИСК ЗАПЧАСТЕЙ
    ============================================================ */
-$('#carForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const brand = $('#carBrand').value.trim();
-  const model = $('#carModel').value.trim();
-  if (!brand || !model) return;
-
-  const car = {
-    id: genId('c'),
-    brand, model,
-    year:  $('#carYear').value.trim(),
-    plate: $('#carPlate').value.trim(),
-    color: $('#carColor').value.trim()
-  };
-
-  const u = currentUser();
-  u.cars.push(car);
-
-  if (!currentCarId) {
-    currentCarId = car.id;
-    localStorage.setItem(LS_CAR(currentLogin), currentCarId);
+const SHOPS = [
+  {
+    name: 'Autopiter',
+    site: 'https://autopiter.ru',
+    phone: '+7 (925) 357-88-26',
+    hours: 'Пн–Пт 10:00–21:00, Сб–Вс 10:00–20:00',
+    searchUrl: q => `https://autopiter.ru/search?q=${encodeURIComponent(q)}`
+  },
+  {
+    name: 'Emex',
+    site: 'https://www.emex.ru',
+    phone: '+7 (495) 799-55-66',
+    hours: 'Круглосуточно (склад)',
+    searchUrl: q => `https://www.emex.ru/search?q=${encodeURIComponent(q)}`
+  },
+  {
+    name: 'Exist',
+    site: 'https://exist.ru',
+    phone: '+7 (495) 780-00-00',
+    hours: 'Пн–Пт 09:00–21:00, Сб–Вс 10:00–18:00',
+    searchUrl: q => `https://exist.ru/search/?q=${encodeURIComponent(q)}`
+  },
+  {
+    name: 'ZZap',
+    site: 'https://zzap.ru',
+    phone: '+7 (495) 988-88-88',
+    hours: 'Пн–Вс 09:00–21:00',
+    searchUrl: q => `https://zzap.ru/search/?q=${encodeURIComponent(q)}`
+  },
+  {
+    name: 'Avito Запчасти',
+    site: 'https://avito.ru',
+    phone: '—',
+    hours: 'Круглосуточно',
+    searchUrl: q => `https://avito.ru/rossiya/zapchasti_i_aksessuary?q=${encodeURIComponent(q)}`
+  },
+  {
+    name: 'Мир запчастей России',
+    site: 'https://mirzap.ru',
+    phone: '+7 (495) 668-12-59',
+    hours: 'Пн–Вс 09:00–21:00',
+    searchUrl: q => `https://mirzap.ru/search/?q=${encodeURIComponent(q)}`
   }
+];
 
-  saveUsers();
-  $('#carForm').reset();
-  renderAll();
-});
+$('#searchPartsBtn').addEventListener('click', () => {
+  const vin  = $('#searchVin').value.trim().toUpperCase();
+  const part = $('#searchPart').value.trim();
+  const out  = $('#searchResults');
 
-/* ============================================================
-   ДЕЙСТВИЯ С МАШИНОЙ
-   ============================================================ */
-$('#carsList').addEventListener('click', e => {
-  const selectBtn = e.target.closest('[data-select-car]');
-  if (selectBtn) {
-    currentCarId = selectBtn.dataset.selectCar;
-    localStorage.setItem(LS_CAR(currentLogin), currentCarId);
-    renderAll();
-    switchTab('repairs');
+  if (!vin && !part) {
+    out.innerHTML = '<div class="search-empty">Введите VIN или название запчасти.</div>';
+    return;
+  }
+  if (vin && !validateVin(vin)) {
+    out.innerHTML = '<div class="search-empty" style="color:#fca5a5">VIN должен содержать 17 символов (без I, O, Q).</div>';
     return;
   }
 
-  const delBtn = e.target.closest('[data-del-car]');
-  if (delBtn) {
-    const id = delBtn.dataset.delCar;
-    if (!confirm('Удалить автомобиль и всю его историю?')) return;
+  const query = [vin, part].filter(Boolean).join(' ');
+  const links = SHOPS.map(s =>
+    `<a class="search-link-btn" href="${s.searchUrl(query)}" target="_blank" rel="noopener">
+       🔍 ${esc(s.name)}
+     </a>`
+  ).join('');
 
-    const u = currentUser();
-    u.cars    = u.cars.filter(c => c.id !== id);
-    u.repairs = u.repairs.filter(r => r.carId !== id);
-    u.parts   = u.parts.filter(p => p.carId !== id);
+  const shopsHtml = SHOPS.map(s => `
+    <div class="shop-card">
+      <div class="shop-name">${esc(s.name)}</div>
+      <div class="shop-meta">
+        📞 ${esc(s.phone)}<br>
+        🕐 ${esc(s.hours)}<br>
+        🌐 <a href="${s.site}" target="_blank" rel="noopener">${esc(s.site.replace('https://', ''))}</a>
+      </div>
+    </div>
+  `).join('');
 
-    if (currentCarId === id) {
-      currentCarId = u.cars[0]?.id || null;
-      if (currentCarId) localStorage.setItem(LS_CAR(currentLogin), currentCarId);
-      else localStorage.removeItem(LS_CAR(currentLogin));
-    }
+  out.innerHTML = `
+    <div class="search-links">${links}</div>
+    <div style="margin-top:18px;font-size:13px;color:var(--muted)">
+      Прямые ссылки на поиск по запросу: <b>${esc(query)}</b>
+    </div>
+    <div style="margin-top:14px">${shopsHtml}</div>
+  `;
+});
 
-    saveUsers();
-    renderAll();
+/* ============================================================
+   МОДАЛКА: ЗАКРЫТИЕ
+   ============================================================ */
+$('#editModal').addEventListener('click', e => {
+  if (e.target.id === 'editModal' || e.target.closest('[data-close-modal]')) {
+    $('#editModal').classList.remove('open');
   }
 });
 
