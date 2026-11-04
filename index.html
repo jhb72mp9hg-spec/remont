@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Учёт ремонта автомобиля</title>
+<style>
+  :root{
+    --bg:#f4f6fa;
+    --card:#ffffff;
+    --text:#151a26;
+    --muted:#6b7280;
+    --accent:#2563eb;
+    --accent-dark:#1d4ed8;
+    --border:#e6e9f0;
+    --danger:#dc2626;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    padding:24px 16px 60px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto}
+  h1{font-size:24px;margin:0 0 6px;letter-spacing:-.3px}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 20px}
+
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px}
+  .stat .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .stat .value{font-size:22px;font-weight:600;letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+  .card + .card{margin-top:16px}
+  .card-head{
+    padding:16px 18px;border-bottom:1px solid var(--border);
+    font-weight:600;font-size:15px;display:flex;justify-content:space-between;align-items:center;
+  }
+
+  form{padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field.full{grid-column:1/-1}
+  label{font-size:13px;color:var(--muted);font-weight:500}
+  input{
+    font:inherit;font-size:15px;color:var(--text);
+    padding:10px 12px;border:1px solid var(--border);border-radius:10px;
+    background:#fbfcfe;outline:none;width:100%;
+    transition:border-color .15s, box-shadow .15s, background .15s;
+  }
+  input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.12);background:#fff}
+
+  button{font:inherit;cursor:pointer;border:none;border-radius:10px;transition:background .15s,transform .05s}
+  .btn-primary{grid-column:1/-1;background:var(--accent);color:#fff;padding:12px;font-size:15px;font-weight:600}
+  .btn-primary:hover{background:var(--accent-dark)}
+  .btn-primary:active{transform:translateY(1px)}
+  .btn-ghost{background:transparent;color:var(--muted);font-size:13px;padding:6px 10px;border-radius:8px}
+  .btn-ghost:hover{background:#fdecec;color:var(--danger)}
+
+  .list{list-style:none;margin:0;padding:0}
+  .record{
+    display:grid;
+    grid-template-columns:92px 1fr auto 30px;
+    grid-template-areas:"date body cost del";
+    gap:12px;align-items:center;
+    padding:14px 18px;
+    border-bottom:1px solid var(--border);
+  }
+  .record:last-child{border-bottom:none}
+  .record:hover{background:#fafbfe}
+  .r-date{grid-area:date;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .r-body{grid-area:body;min-width:0}
+  .r-work{font-weight:500;font-size:15px;overflow-wrap:anywhere}
+  .r-part{font-size:13px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
+  .r-cost{grid-area:cost;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .r-del{
+    grid-area:del;width:30px;height:30px;background:transparent;color:#b9c0cd;
+    font-size:14px;display:grid;place-items:center;padding:0;
+  }
+  .r-del:hover{background:#fdecec;color:var(--danger)}
+
+  .empty{padding:34px 18px;text-align:center;color:var(--muted);font-size:14px}
+
+  @media (max-width:640px){
+    .stats{grid-template-columns:1fr}
+    form{grid-template-columns:1fr}
+    .record{
+      grid-template-columns:1fr auto;
+      grid-template-areas:
+        "date del"
+        "body cost";
+      row-gap:6px;
+    }
+    .r-cost{align-self:end}
+    .r-del{align-self:start}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Учёт ремонта автомобиля</h1>
+  <p class="sub">Записывайте работы, детали и расходы — всё хранится в этом браузере.</p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="label">Всего потрачено</div>
+      <div class="value" id="total">0 ₽</div>
+    </div>
+    <div class="stat">
+      <div class="label">Записей</div>
+      <div class="value" id="count">0</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">Новая запись</div>
+    <form id="form">
+      <div class="field">
+        <label for="date">Дата</label>
+        <input type="date" id="date" required>
+      </div>
+      <div class="field">
+        <label for="cost">Стоимость, ₽</label>
+        <input type="number" id="cost" min="0" step="0.01" inputmode="decimal" placeholder="0">
+      </div>
+      <div class="field full">
+        <label for="work">Что сделали</label>
+        <input type="text" id="work" required placeholder="Например: замена масла и фильтра">
+      </div>
+      <div class="field full">
+        <label for="part">Название детали (необязательно)</label>
+        <input type="text" id="part" placeholder="Например: масло Mobil 5W-40, фильтр MANN">
+      </div>
+      <button type="submit" class="btn-primary">Добавить запись</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span>История работ</span>
+      <button id="clearAll" class="btn-ghost" hidden>Очистить всё</button>
+    </div>
+    <ul id="list" class="list"></ul>
+    <div id="empty" class="empty">Пока нет записей — добавьте первую выше.</div>
+  </div>
+
+</div>
+
+<script>
+  const KEY = 'carRepairs.v1';
+  const $ = s => document.querySelector(s);
+
+  let records = loadRecords();
+
+  function loadRecords(){
+    try{
+      const raw = JSON.parse(localStorage.getItem(KEY));
+      return Array.isArray(raw) ? raw : [];
+    }catch(e){ return []; }
+  }
+  function persist(){
+    localStorage.setItem(KEY, JSON.stringify(records));
+  }
+
+  const money = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 2 });
+
+  function esc(s){
+    return String(s ?? '').replace(/[&<>"']/g, c => (
+      {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
+    ));
+  }
+  function formatDate(iso){
+    if(!iso) return '';
+    const [y,m,d] = iso.split('-');
+    return `${d}.${m}.${y}`;
+  }
+  function todayISO(){
+    const d = new Date();
+    const p = n => String(n).padStart(2,'0');
+    return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`;
+  }
+
+  function render(){
+    const list = $('#list');
+
+    const sorted = [...records].sort((a,b) =>
+      (b.date || '').localeCompare(a.date || '') || b.id - a.id
+    );
+
+    list.innerHTML = sorted.map(r => `
+      <li class="record">
+        <div class="r-date">${esc(formatDate(r.date))}</div>
+        <div class="r-body">
+          <div class="r-work">${esc(r.work)}</div>
+          ${r.part ? `<div class="r-part">${esc(r.part)}</div>` : ''}
+        </div>
+        <div class="r-cost">${money.format(Number(r.cost) || 0)} ₽</div>
+        <button class="r-del" data-id="${r.id}" title="Удалить" aria-label="Удалить запись">✕</button>
+      </li>
+    `).join('');
+
+    $('#empty').hidden = records.length > 0;
+    $('#clearAll').hidden = records.length === 0;
+    $('#count').textContent = records.length;
+
+    const total = records.reduce((s,r) => s + (Number(r.cost) || 0), 0);
+    $('#total').textContent = money.format(total) + ' ₽';
+  }
+
+  $('#form').addEventListener('submit', e => {
+    e.preventDefault();
+
+    const date = $('#date').value;
+    const work = $('#work').value.trim();
+    const part = $('#part').value.trim();
+    const cost = parseFloat($('#cost').value) || 0;
+
+    if(!date || !work) return;
+
+    records.push({ id: Date.now(), date, work, part, cost });
+    persist();
+    render();
+
+    $('#work').value = '';
+    $('#part').value = '';
+    $('#cost').value = '';
+    $('#work').focus();
+  });
+
+  $('#list').addEventListener('click', e => {
+    const btn = e.target.closest('.r-del');
+    if(!btn) return;
+
+    const id = Number(btn.dataset.id);
+    records = records.filter(r => r.id !== id);
+    persist();
+    render();
+  });
+
+  $('#clearAll').addEventListener('click', () => {
+    if(!confirm('Удалить все записи? Это действие нельзя отменить.')) return;
+    records = [];
+    persist();
+    render();
+  });
+
+  // стартовое состояние
+  $('#date').value = todayISO();
+  render();
+</script>
+</body>
+</html>
